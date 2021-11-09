@@ -4,12 +4,12 @@
 
 ### :zap: Integrantes
 
-| Nombre                    | Rol                   |
-| --------------------------| ----------------------|
-|                           | Desarrollador         |
-|                           | Analista              |
-| Juan Esteban Pino Vidal   | DB Admin              |
-| Crihstian Molina          | Scrum Master          |
-| Jhon Jairo Garces Montes  | Product Owner         |
+| Nombre                   | Rol           |
+| ------------------------ | ------------- |
+| Sofía Betancourt López   | Desarrollador |
+|                          | Analista      |
+| Juan Esteban Pino Vidal  | DB Admin      |
+| Crihstian Molina         | Scrum Master  |
+| Jhon Jairo Garces Montes | Product Owner |
 
 ### :metal: DevFlow Team
