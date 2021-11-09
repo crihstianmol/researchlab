@@ -6,8 +6,8 @@
 
 | Nombre                   | Rol           |
 | ------------------------ | ------------- |
-|                          | Desarrollador |
-| Sofía Betancourt López   | Analista      |
+| Sofía Betancourt López   | Desarrollador |
+|                          | Analista      |
 |                          | DB Admin      |
 | Crihstian Molina         | Scrum Master  |
 | Jhon Jairo Garces Montes | Product Owner |
