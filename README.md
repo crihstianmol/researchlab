@@ -7,9 +7,9 @@
 | Nombre                    | Rol                   |
 | --------------------------| ----------------------|
 |                           | Desarrollador         |
-| Crihstian Molina          | Analista              |
 |                           | DB Admin              |
-|                           | Scrum Master          |
+|                           | Analista              |
+| Crihstian Molina          | Scrum Master          |
 | Jhon Jairo Garces Montes  | Product Owner         |
 
 ### :metal: DevFlow Team
