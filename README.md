@@ -10,6 +10,6 @@
 |                           | Analista              |
 |                           | DB Admin              |
 |                           | Scrum Master          |
-|                           | Product Owner         |
+| Jhon Jairo Garces Montes  | Product Owner         |
 
 ### :metal: DevFlow Team
