@@ -8,7 +8,7 @@
 | --------------------------| ----------------------|
 |                           | Desarrollador         |
 | Crihstian Molina          | Analista              |
-|                           | DB Admin              |
+| Juan Esteban Pino Vidal   | DB Admin              |
 |                           | Scrum Master          |
 | Jhon Jairo Garces Montes  | Product Owner         |
 
