@@ -17,6 +17,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "keywords": [],
+  "author": "Crihstian Molina <crihstianmol@gmail.com>",
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
