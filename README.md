@@ -6,8 +6,8 @@
 
 | Nombre                    | Rol                   |
 | --------------------------| ----------------------|
-| Crihstian Molina          | Developer             |
-|                           | Scrum                 |
+| Crihstian Molina          | Desarrollador         |
+|                           | Analista              |
 |                           | DB Admin              |
 |                           | Scrum Master          |
 |                           | Product Owner         |
