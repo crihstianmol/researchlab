@@ -7,9 +7,9 @@
 | Nombre                    | Rol                   |
 | --------------------------| ----------------------|
 |                           | Desarrollador         |
-| Crihstian Molina          | Analista              |
+| Laura  Montana            | Analista              |
 | Juan Esteban Pino Vidal   | DB Admin              |
-|                           | Scrum Master          |
+| Crihstian Molina          | Scrum Master          |
 | Jhon Jairo Garces Montes  | Product Owner         |
 
 ### :metal: DevFlow Team
