@@ -1,10 +1,25 @@
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from './components/Login/Login'
+import Registro from './components/Registro/Registro'
 import './App.css'
 
 function App() {
   return (
-    <div className="greeting">
-      <h1>Welcome to ResearchLab App</h1>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/registro">
+            <Registro />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
