@@ -1,0 +1,19 @@
+:root {
+  --bg-color: #66acb7;
+  --bg-color-two: #ffffff;
+  --primary-color: #0d0221;
+  --secondary-color: #2c49a0;
+  --shade-color: #0f084B;
+  --font-color: #ffffff;
+  --font-color-two: #000000;
+}
+* {
+  font-family: "Poppins", Verdana, sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+.greeting {
+  text-align: center;
+  margin-top: 40vh;
+}
