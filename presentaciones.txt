@@ -4,3 +4,5 @@ My name is Juan Esteban Pino, Im a database admin from Pereira,Risaralda
 My name is Laura, I´m hoping to learn more about web development. I´m from Bogotá.
 ### Crihstian Camilo Molina Castro
 My name is Crihstian, I'm a backend Developer, I'm from Cali, Colombia
+### Jhon Jairo Garces Montes
+My name is Jhon, I'm a Web developer from Medellin, Colombia
