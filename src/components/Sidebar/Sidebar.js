@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 import { NavLink } from "react-router-dom";
-
-import { SidebarItems } from './SidebarItems';
+import avatar from "../../img/avatar.PNG"
+import { SidebarItems } from "./SidebarItems";
 
 function Sidebar() {
-    return (
-        <div className="SidebarList">
+  return (
+    <div className="sidebar">
+      
+      <div className="SidebarList">
         <ul>
           {SidebarItems.map((item, key) => {
             return (
@@ -19,7 +21,8 @@ function Sidebar() {
           })}
         </ul>
       </div>
-    )
+    </div>
+  );
 }
 
-export default Sidebar
+export default Sidebar;

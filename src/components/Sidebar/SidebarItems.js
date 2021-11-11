@@ -2,7 +2,7 @@ export const SidebarItems = [
   {
     title: "Actualizar Perfil",
     // icon: <AiOutlineHome />,
-    link: "/",
+    link: "/ActualizarPerfil",
   },
   {
     title: "Proyectos",
@@ -25,7 +25,7 @@ export const SidebarItems = [
     link: "/GestionUsuarios",
   },
   {
-    title: "Admini Proyectos",
+    title: "Admin Proyectos",
     // icon: <TiDocumentText />,
     link: "/AdminProyectos",
   },
