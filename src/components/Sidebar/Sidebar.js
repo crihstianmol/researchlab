@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import avatar from "../../img/avatar.PNG"
 import { SidebarItems } from "./SidebarItems";
-
+import "./Sidebar.css"
 function Sidebar() {
   return (
     <div className="sidebar">
