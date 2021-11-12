@@ -1,0 +1,43 @@
+nav {
+    background: #0D0221
+}
+
+ #navbar-logo{
+    height: 50px;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+ #navbar-logo img {
+     height: 45px;
+     
+ }
+ .footer-component {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.footer-container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background:#0D0221;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer-container a {
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+    text-align: justify;
+}

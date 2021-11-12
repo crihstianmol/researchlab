@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Paper, TextField } from "@mui/material";
 import CurrencyTextField from "@unicef/material-ui-currency-textfield";
 import MenuItem from "@mui/material/MenuItem";
+import styles from './CrearProyecto.css'
 
 function CrearProyecto() {
   const [value, setValue] = React.useState();
@@ -33,17 +34,19 @@ function CrearProyecto() {
   ];
 
   return (
-    <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
+    <Paper id="container" style={{ margin: "10px 10%", padding: "25px 50px" }}>
       <h1>Registrar Nuevo proyecto</h1>
       <br />
       <form>
         <TextField
+          id="nombre-proyecto"
           label="Nombre del Proyecto"
           fullWidth
           autoComplete="off"
           margin="normal"
         />
         <TextField
+          id="objetivos"
           label="Objetivos Generales"
           multiline
           maxRows={4}
@@ -52,6 +55,7 @@ function CrearProyecto() {
           margin="normal"
         />
         <TextField
+          id="objetivos"
           label="Objetivos Especificos"
           multiline
           maxRows={4}
@@ -60,6 +64,7 @@ function CrearProyecto() {
           margin="normal"
         />
         <CurrencyTextField
+          id="presupuesto"
           label="Presupuesto"
           fullWidth
           value={value}
@@ -72,7 +77,7 @@ function CrearProyecto() {
           margin="normal"
         />
         <TextField
-          id="date"
+          id="fecha"
           label="Fecha de Inicio"
           type="date"
           defaultValue="2017-05-24"
@@ -83,7 +88,7 @@ function CrearProyecto() {
           margin="normal"
         />
         <TextField
-          id="date"
+          id="fecha"
           label="Fecha de terminacion"
           type="date"
           defaultValue="2017-05-24"
@@ -94,12 +99,14 @@ function CrearProyecto() {
           margin="normal"
         />
         <TextField
+          id="nombre-lider"
           label="Nombre del Lider"
           fullWidth
           autoComplete="off"
           margin="normal"
         />
         <TextField
+          id="ID-lider"
           fullWidth
           label="ID del Lider"
           autoComplete="off"
@@ -107,7 +114,7 @@ function CrearProyecto() {
         />
         <TextField
           margin="normal"
-          id="outlined-select-currency"
+          id="estado-proyecto"
           select
           label="Estado del Proyecto"
           value={projectStatus}
@@ -122,7 +129,7 @@ function CrearProyecto() {
 
         <TextField
           margin="normal"
-          id="outlined-select-currency"
+          id="fase-proyecto"
           select
           label="Fase del Proyecto"
           value={projectStage}
@@ -135,7 +142,7 @@ function CrearProyecto() {
           ))}
         </TextField>
 
-        <Button style={{ marginTop: "20px" }} variant="contained">
+        <Button id="btn-agregar" style={{ marginTop: "20px" }} variant="contained">
           Crear Proyecto
         </Button>
       </form>

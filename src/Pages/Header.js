@@ -1,13 +1,16 @@
 import React from "react";
 import Logo from "../img/Logo.png";
+import sytles from "./styles.css";
 
 function Header() {
   return (
-    <Paper elevation={5}>
-      <div className="header-components">
-        <img src={Logo} alt="Logo" href="!#" />
-      </div>
-    </Paper>
+    
+      <nav id="Header-container">
+        <div id="navbar-logo">
+          <img src={Logo} alt="Logo" href="!#" />
+        </div>
+      </nav>
+    
   );
 }
 

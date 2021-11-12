@@ -10,6 +10,9 @@ import CrearProyecto from "./Pages/CrearProyecto";
 import GestionUsuarios from "./Pages/GestionUsuarios";
 import AdminProyectos from "./Pages/AdminProyectos";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./Pages/Header";
+import Footer from "./Pages/Footer";
+
 
 function App() {
   return (
@@ -23,12 +26,13 @@ function App() {
 
 
           {/* Sidebar Routes */}
-          <Route path="/ActualizarPerfil" element={<><Sidebar /> <ActualizarPerfil /></>}></Route>
-          <Route path="/Proyectos" element={<><Sidebar /><Proyectos /></>}></Route>
-          <Route path="/MisProyectos" element={<><Sidebar /><MisProyectos /> </>}></Route>
-          <Route path="/CrearProyecto" element={<><Sidebar /> <CrearProyecto /></>}></Route>
-          <Route path="/GestionUsuarios" element={<><Sidebar/><GestionUsuarios /></>}></Route>
-          <Route path="/AdminProyectos" element={<> <Sidebar/><AdminProyectos /></>}></Route>
+       
+          <Route path="/ActualizarPerfil" element={<><Sidebar /> <ActualizarPerfil /><Footer /></>}></Route>
+          <Route path="/Proyectos" element={<><Header /><Sidebar /><Proyectos /><Footer /></>}></Route>
+          <Route path="/MisProyectos" element={<><Header /><Sidebar /><MisProyectos /><Footer /> </>}></Route>
+          <Route path="/CrearProyecto" element={<><Header /><Sidebar /> <CrearProyecto /><Footer /></>}></Route>
+          <Route path="/GestionUsuarios" element={<><Header /><Sidebar/><GestionUsuarios /><Footer /></>}></Route>
+          <Route path="/AdminProyectos" element={<><Header /> <Sidebar/><AdminProyectos /><Footer /></>}></Route>
         </Routes>
       </Router>
     </div>
