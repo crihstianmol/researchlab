@@ -4,7 +4,7 @@ import CurrencyTextField from "@unicef/material-ui-currency-textfield";
 import MenuItem from "@mui/material/MenuItem";
 import "./CrearProyecto.css";
 
-function CrearProyecto() {
+function CrearProyecto(addProyecto) {
   const [proyecto, setProyecto] = useState({
     nombreProyecto: "",
     objGenerales: "",
@@ -12,29 +12,31 @@ function CrearProyecto() {
     presupuesto: "",
     fchInicio: "",
     fchFinal: "",
-    nombreLider:"",
-    idLider:"",
-
+    nombreLider: "",
+    idLider: "",
   });
-  function changeHandler(event){
-    const {name, value} = event.target
-    setProyecto(preValues => {
-      return{
-        ...preValues,
-        [name]: value
-
-      }
-    })
-
+  function clickHandler() {
+    addProyecto(proyecto);
+    setProyecto({
+      nombreProyecto: "",
+      objGenerales: "",
+      objEspecificos: "",
+      presupuesto: "",
+      fchInicio: "",
+      fchFinal: "",
+      nombreLider: "",
+      idLider: "",
+    });
   }
-  console.log(proyecto);
-
-  // Encontre esta es la funcion para el input de la fecha
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
-  // Encontre que esta es la funcion para establecer capturar el valor monetario ingresado
-  const [value, setValue] = React.useState(100);
+  function changeHandler(event) {
+    const { name, value } = event.target;
+    setProyecto((preValues) => {
+      return {
+        ...preValues,
+        [name]: value,
+      };
+    });
+  }
 
   // estas const definen las opciones de los combo box de fase y estado
 
@@ -108,18 +110,20 @@ function CrearProyecto() {
               label="Presupuesto"
               fullWidth
               name="presupuesto"
-              value={value}
+              value={proyecto.presupuesto}
+              onChange={changeHandler}
               currencySymbol="$"
               variant="outlined"
               outputFormat="string"
               decimalCharacter="."
               digitGroupSeparator=","
-              onChange={(event, value) => setValue(value)}
               margin="normal"
             />
             <div className="Fch-inicio">
-            <TextField
-                id="fecha"
+              <TextField
+                name="fchInicio"
+                value={proyecto.fchInicio}
+                onChange={changeHandler}
                 label="Fecha de Inicio"
                 type="date"
                 defaultValue="2017-05-24"
@@ -132,7 +136,9 @@ function CrearProyecto() {
             </div>
             <div className="Fch-final">
               <TextField
-                id="fecha"
+                name="fchFinal"
+                value={proyecto.fchFinal}
+                onChange={changeHandler}
                 label="Fecha de terminacion"
                 type="date"
                 defaultValue="2017-05-24"
@@ -195,11 +201,7 @@ function CrearProyecto() {
             </div>
 
             <div className="btn-crear-proyecto">
-              <Button
-                id="btn-agregar"
-                style={{ marginTop: "20px" }}
-                variant="contained"
-              >
+              <Button onClick={clickHandler} variant="contained">
                 Crear Proyecto
               </Button>
             </div>
