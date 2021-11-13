@@ -1,0 +1,33 @@
+.act-perf-container{
+    width: 100%;
+}
+
+.act-perf-paper{
+    outline: 1rem solid var(--shade-color);
+    width: 60%;
+    height: 60%;
+    margin: 10% auto;
+    padding:3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+.act-perf-input-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+.act-perf-title{
+    margin: 0 auto;
+    display:inline-block;
+    color: var(--shade-color);
+    font-size:2rem;
+}
+
+.act-perf-button-cont{
+    display: flex;
+    justify-content: center;
+}

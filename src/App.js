@@ -3,7 +3,7 @@ import Login from "./components/Login/Login";
 import Registro from "./components/Registro/Registro";
 import "./App.css";
 import Home from "./Pages/Home";
-import ActualizarPerfil from "./Pages/ActualizarPerfil";
+import ActualizarPerfil from "./components/ActualizarPerfil/ActualizarPerfil";
 import Proyectos from "./Pages/Proyectos";
 import MisProyectos from "./Pages/MisProyectos";
 import CrearProyecto from "./Pages/CrearProyecto";
