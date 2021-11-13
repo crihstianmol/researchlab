@@ -27,12 +27,12 @@ function App() {
 
           {/* Sidebar Routes */}
        
-          <Route path="/ActualizarPerfil" element={<><Sidebar /> <ActualizarPerfil /><Footer /></>}></Route>
-          <Route path="/Proyectos" element={<><Header /><Sidebar /><Proyectos /><Footer /></>}></Route>
-          <Route path="/MisProyectos" element={<><Header /><Sidebar /><MisProyectos /><Footer /> </>}></Route>
-          <Route path="/CrearProyecto" element={<><Header /><Sidebar /> <CrearProyecto /><Footer /></>}></Route>
-          <Route path="/GestionUsuarios" element={<><Header /><Sidebar/><GestionUsuarios /><Footer /></>}></Route>
-          <Route path="/AdminProyectos" element={<><Header /> <Sidebar/><AdminProyectos /><Footer /></>}></Route>
+          <Route path="/ActualizarPerfil" element={<><Header /><div className="body-container"> <Sidebar /> <ActualizarPerfil /></div><Footer /></>}></Route>
+          <Route path="/Proyectos" element={<><Header /><div className="body-container"><Sidebar /><Proyectos /></div><Footer /></>}></Route>
+          <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><MisProyectos /></div><Footer /> </>}></Route>
+          <Route path="/CrearProyecto" element={<><Header /><div className="body-container"><Sidebar /> <CrearProyecto /></div><Footer /></>}></Route>
+          <Route path="/GestionUsuarios" element={<><Header /><div className="body-container"><Sidebar/><GestionUsuarios /></div><Footer /></>}></Route>
+          <Route path="/AdminProyectos" element={<><Header /> <div className="body-container"><Sidebar/><AdminProyectos /></div><Footer /></>}></Route>
         </Routes>
       </Router>
     </div>
