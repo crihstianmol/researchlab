@@ -1,0 +1,27 @@
+.form-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+}
+
+.form-container h1 {
+  margin: 0;
+  padding: 0 0 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.form-items{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+.btn-crear-proyecto {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}

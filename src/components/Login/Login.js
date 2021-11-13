@@ -44,6 +44,7 @@ function Login() {
         </div>
         <div className="login-form-container">
           <div className="login-card">
+            <br/>
             <h4>Iniciar sesión</h4>
             <form>
               <div className="input-container">
@@ -55,13 +56,14 @@ function Login() {
                   type={values.email ? "text" : "email"}
                   value={values.email}
                   onChange={handleChange("email")}
+                  margin="normal"
                 />
               </div>
 
               {/* Password input */}
 
               <div className="password-container">
-                <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+                <FormControl variant="outlined">
                   <InputLabel htmlFor="outlined-adornment-password">
                     Password
                   </InputLabel>
@@ -72,17 +74,16 @@ function Login() {
                     value={values.password}
                     onChange={handleChange("password")}
                     endAdornment={
-                      <InputAdornment position="end" sx={{ fontSize: 30 }}>
+                      <InputAdornment position="end">
                         <IconButton
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}
-                          edge="end"
                         >
                           {values.showPassword ? (
-                            <VisibilityOff />
+                            <VisibilityOff fontSize="small" />
                           ) : (
-                            <Visibility />
+                            <Visibility fontSize="small" />
                           )}
                         </IconButton>
                       </InputAdornment>
@@ -93,10 +94,13 @@ function Login() {
               </div>
 
               {/* Botones */}
-              <div className="input-container">
-                <button> Iniciar sesión </button>
-
-                <button> Registrarse</button>
+              <div className="btn-container">
+                <div className="btn-login">
+                  <button> Iniciar sesión </button>
+                </div>
+                <div className="btn-Registro">
+                  <button> Registrarse</button>
+                </div>
               </div>
               <label>¿Olvidó su contraseña?</label>
             </form>

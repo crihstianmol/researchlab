@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import ActualizarPerfil from "./components/ActualizarPerfil/ActualizarPerfil";
 import Proyectos from "./Pages/Proyectos";
 import MisProyectos from "./Pages/MisProyectos";
-import CrearProyecto from "./Pages/CrearProyecto";
+import CrearProyecto from "./components/Crearproyecto/CrearProyecto";
 import GestionUsuarios from "./Pages/GestionUsuarios";
 import AdminProyectos from "./Pages/AdminProyectos";
 import Sidebar from "./components/Sidebar/Sidebar";
