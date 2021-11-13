@@ -16,27 +16,27 @@ function ActualizarPerfil() {
           required
           id="email"
           label="Email"
-          variant="standard"
+          margin="normal"
           margin="normal"
         />
         <TextField
           required
           id="ident"
           label="Identificación"
-          variant="standard"
+          margin="normal"
         />
         <TextField
           required
           id="name"
           label="Nombre Completo"
-          variant="standard"
+          margin="normal"
         />
         <TextField
           required
           id="password"
           type="password"
           label="Contraseña"
-          variant="standard"
+          margin="normal"
         />
         <div className="act-perf-button-cont">
           <ColorButton variant="contained">Guardar Cambios</ColorButton>
