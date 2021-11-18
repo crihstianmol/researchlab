@@ -1,0 +1,44 @@
+PARA LA CREACION DE LA COLECCION USERS
+
+-Me conecte a mongo a travez del shell que nos proporciona
+
+-Usé la base de datos con el comando: use researchlab-db
+
+-Creé la coleccion a la vez que cree el primer documento de la coleccion
+con el comando:
+db.users.insertOne(
+{
+    "email":"armandocasitas123@gmail.com",
+    "dni":"1194453412",
+    "name":"Armando Casas Rodriguez",
+    "password": "pedritoparra",
+    "role":"lider",
+    "state":"active"
+})
+
+EJEMPLOS DE CONSULTAS A LA BASE DE DATOS
+-encontrar usuario por nombre
+    db.users.find({name:"Juan Pino"})
+
+-insertar usuario
+    db.users.insertOne(
+    {
+        "email":"armandocasitas123@gmail.com",
+        "dni":"1194453412",
+        "name":"Armando Casas Rodriguez",
+        "password": "pedritoparra",
+        "role":"lider",
+        "state":"inactive",
+    })
+
+-actualizar el estado de todos los administradores a activo
+    db.users.updateMany(
+    {role: "admin"},
+    {
+        $set: {state:"active"}
+    }
+    )
+
+-eliminar todos los usuarios inactivos
+    db.users.deleteMany({state:"inactive"})
+
