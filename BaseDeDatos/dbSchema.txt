@@ -135,3 +135,42 @@ db.createCollection('projects', {
         }
     }
 })
+
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['email', 'DNI', 'name', 'lastName', 'password', 'role', 'status'],
+            properties: {
+                email: {
+                    bsonType: 'string',
+                    description: 'Email del usuario, campo obligatorio.'
+                },
+                DNI: {
+                    bsonType: 'string',
+                    description: 'DNI del usuario, campo obligatorio.'
+                },
+                name: {
+                    bsonType: 'string',
+                    description: 'Nombre del usuario, campo obligatorio.'
+                },
+                lastName: {
+                    bsonType: 'string',
+                    description: 'Apellido del usuario, campo obligatorio.'
+                },
+                password: {
+                    bsonType: 'string',
+                    description: 'Password del usuario, campo obligatorio.'
+                },
+                status: {
+                    enum: ["Pendiente", "Autorizado", "No Autorizado"],
+                    description: 'Estatus del usuario, campo obligatorio.'
+                },
+                role: {
+                    enum: ["Estudiante", "Líder", "Admin"],
+                    description: 'Rol del usuario, campo obligatorio.'
+                },
+            }
+        }
+    }
+})
