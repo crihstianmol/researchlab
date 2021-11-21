@@ -1,0 +1,137 @@
+use researchlab-db
+
+db.createCollection('projects', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase', 'generalObj', 'specificObj', 'inscriptions', 'progress'],
+            properties: {
+                projectName: {
+                    bsonType: 'string',
+                    description: 'Nombre del proyecto, campo obligatorio.'
+                },
+                budget: {
+                    bsonType: 'double',
+                    description: 'Presupuesto del proyecto, campo obligatorio.'
+                },
+                startDate: {
+                    bsonType: 'string',
+                    description: 'Fecha Inicial, campo obligatorio.'
+                },
+                endDate: {
+                    bsonType: 'string',
+                    description: 'Fecha Final, campo obligatorio.'
+                },
+                leaderId: {
+                    bsonType: 'string',
+                    description: 'Identificación del Líder, campo obligatorio.'
+                },
+                leaderName: {
+                    bsonType: 'string',
+                    description: 'Nombre del Líder, campo obligatorio.'
+                },
+                status: {
+                    enum: ["Activo", "Inactivo"],
+                    description: 'Estado del proyecto, campo obligatorio.'
+                },
+                phase: {
+                    enum: ["Iniciado", "En desarrollo", "Finalizado"],
+                    description: 'Fase del proyecto, campo obligatorio'
+                },
+                generalObj: {
+                    bsonType: 'array',
+                    uniqueItems: true,
+                    description: 'Los objetivos generales, cuentan como arreglo de datos.',
+                    items: {
+                        bsonType: ['object'],
+                        required: ['user', 'objective'],
+                        properties: {
+                            user: {
+                                bsonType: 'string',
+                                description: 'El ID del usuario que ingresó el objetivo, campo obligatorio.'
+                            },
+                            objective: {
+                                bsonType: 'string',
+                                description: 'El objetivo en si, campo obligatorio'
+                            }
+                        }
+                    }
+                },
+                specificObj: {
+                    bsonType: 'array',
+                    uniqueItems: true,
+                    description: 'Los objetivos especificos, cuentan como arreglo de datos.',
+                    items: {
+                        bsonType: ['object'],
+                        required: ['user', 'objective'],
+                        properties: {
+                            user: {
+                                bsonType: 'string',
+                                description: 'El ID del usuario que ingresó el objetivo, campo obligatorio.'
+                            },
+                            objective: {
+                                bsonType: 'string',
+                                description: 'El objetivo en si, campo obligatorio'
+                            }
+                        }
+                    }
+                },
+                inscriptions: {
+                    bsonType: 'array',
+                    uniqueItems: true,
+                    description: 'Las inscripciones de los usuarios al proyecto, cuentan como arreglo de datos.',
+                    items: {
+                        bsonType: ['object'],
+                        required: ['studentId', 'joinDate', 'leftDate', 'status'],
+                        properties: {
+                            studentId: {
+                                bsonType: 'string',
+                                description: 'El ID del estudiante que hizo la inscripción, campo obligatorio.'
+                            },
+                            joinDate: {
+                                bsonType: 'string',
+                                description: 'Fecha Inicial, campo obligatorio.'
+                            },
+                            leftDate: {
+                                bsonType: 'string',
+                                description: 'Fecha Final, campo obligatorio.'
+                            },
+                            status: {
+                                enum: ["Aceptado", "Rechazado"],
+                                description: 'Estado de la inscripción, campo obligatorio.'
+                            }
+
+                        }
+                    }
+                },
+                progress: {
+                    bsonType: 'array',
+                    uniqueItems: true,
+                    description: 'Los avancces dictados por los usuarios de los usuarios al proyecto, cuentan como arreglo de datos.',
+                    items: {
+                        bsonType: ['object'],
+                        required: ['date', 'description', 'observation', 'createdBy'],
+                        properties: {
+                            date: {
+                                bsonType: 'string',
+                                description: 'Fecha del registro, campo obligatorio.'
+                            },
+                            description: {
+                                bsonType: 'string',
+                                description: 'Descripción del avance, campo obligatorio.'
+                            },
+                            observation: {
+                                bsonType: 'string',
+                                description: 'Observación del lider, campo obligatorio.'
+                            },
+                            createdBy: {
+                                bsonType: 'string',
+                                description: 'Id del Usuario que creó el avance, campo obligatorio.'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+})
