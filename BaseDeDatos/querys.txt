@@ -1,0 +1,15 @@
+db.projects.find({
+    
+})
+
+db.projects.insertOne({
+    
+})
+
+db.projects.updateOne({
+    
+})
+
+db.projects.deleteOne({
+    
+})

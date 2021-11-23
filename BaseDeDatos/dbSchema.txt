@@ -4,7 +4,7 @@ db.createCollection('projects', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
-            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase', 'generalObj', 'specificObj', 'inscriptions', 'progress'],
+            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase', 'generalObj', 'specificObj'],
             properties: {
                 projectName: {
                     bsonType: 'string',
@@ -110,7 +110,7 @@ db.createCollection('projects', {
                     description: 'Los avancces dictados por los usuarios de los usuarios al proyecto, cuentan como arreglo de datos.',
                     items: {
                         bsonType: ['object'],
-                        required: ['date', 'description', 'observation', 'createdBy'],
+                        required: ['date', 'description', 'createdBy'],
                         properties: {
                             date: {
                                 bsonType: 'string',
