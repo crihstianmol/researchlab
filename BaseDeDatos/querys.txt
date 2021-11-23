@@ -8,7 +8,11 @@ db.projects.insertOne({
 
 db.projects.updateOne({
     
-})
+},
+{
+    
+}
+)
 
 db.projects.deleteOne({
     
