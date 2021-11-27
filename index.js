@@ -1,8 +1,14 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors')
+import express from 'express';
+import cors from 'cors';
+import { ApolloServer } from 'apollo-server-express';
+import dotenv from 'dotenv';
+import db from './driver/mongo-connection';
+// import { tipos } from './graphql/types.js';
+// import { resolvers } from './graphql/resolvers.js';
+// import { validateToken } from './utils/tokenUtils.js';
 
-require('./driver/mongo-connection');
+dotenv.config();
+
 
 // const usersRouter = require('./routes/users')
 // const salesRouter = require('./routes/sales')
