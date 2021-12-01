@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-express';
 
-const tiposProyecto = gql`
+const tiposProject = gql`
   type objectiveItem {
     user: String!
     objective: String!
@@ -27,8 +27,8 @@ const tiposProyecto = gql`
     endDate: String
     leaderId: String
     leaderName: String
-    status: String
-    phase: String
+    status: Enum_statusProj
+    phase: Enum_phaseProj
     generalObj: [objectiveItem]
     specificObj: [objectiveItem]
     inscriptions: [inscriptionItem]
@@ -43,8 +43,8 @@ const tiposProyecto = gql`
     endDate: String!
     leaderId: String!
     leaderName: String!
-    status: String!
-    phase: String!
+    status: Enum_statusProj!
+    phase: Enum_phaseProj!
     generalObj: [objectiveItem]
     specificObj: [objectiveItem]
     inscriptions: [inscriptionItem]
@@ -63,8 +63,8 @@ const tiposProyecto = gql`
         endDate: String!
         leaderId: String!
         leaderName: String!
-        status: String!
-        phase: String!
+        status: Enum_statusProj!
+        phase: Enum_phaseProj!
         generalObj: [objectiveItem]
         specificObj: [objectiveItem]
         inscriptions: [inscriptionItem]
@@ -76,4 +76,4 @@ const tiposProyecto = gql`
   }
 `;
 
-export { tiposProyecto };
+export { tiposProject };

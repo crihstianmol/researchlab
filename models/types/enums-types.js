@@ -17,6 +17,17 @@ const tiposEnums = gql`
       Aceptado
       Rechazado
   }
+  
+  enum Enum_phaseProj {
+    Iniciado
+    En_desarrollo
+    Finalizado
+  }
+  
+  enum Enum_statusProj {
+    Activo
+    Inactivo
+  }
 
 `;
 

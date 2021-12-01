@@ -1,8 +1,10 @@
 
-import { tiposUsuario } from '../models/types/users-types.js';
-import { tiposProyecto } from '../models/types/projects-types.js';
+import { tiposUser } from '../models/types/users-types.js';
+import { tiposProject } from '../models/types/projects-types.js';
+import { tiposEnums } from '../models/types/enums-types.js';
 
 export const tipos = [
-  tiposUsuario,
-  tiposProyecto
+  tiposEnums,
+  tiposUser,
+  tiposProject
 ];
