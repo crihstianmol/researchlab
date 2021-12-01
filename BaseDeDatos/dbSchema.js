@@ -1,10 +1,10 @@
-use researchlab-db
+//use researchlab-db
 
 db.createCollection('projects', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
-            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase', 'generalObj', 'specificObj'],
+            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase'],
             properties: {
                 projectName: {
                     bsonType: 'string',
@@ -31,10 +31,12 @@ db.createCollection('projects', {
                     description: 'Nombre del Líder, campo obligatorio.'
                 },
                 status: {
+                    bsonType: 'string',
                     enum: ["Activo", "Inactivo"],
                     description: 'Estado del proyecto, campo obligatorio.'
                 },
                 phase: {
+                    bsonType: 'string',
                     enum: ["Iniciado", "En desarrollo", "Finalizado"],
                     description: 'Fase del proyecto, campo obligatorio'
                 },
@@ -46,6 +48,9 @@ db.createCollection('projects', {
                         bsonType: ['object'],
                         required: ['user', 'objective'],
                         properties: {
+                            id: {
+                                bsonType: 'objectId'
+                            },
                             user: {
                                 bsonType: 'string',
                                 description: 'El ID del usuario que ingresó el objetivo, campo obligatorio.'
@@ -65,6 +70,9 @@ db.createCollection('projects', {
                         bsonType: ['object'],
                         required: ['user', 'objective'],
                         properties: {
+                            id: {
+                                bsonType: 'objectId'
+                            },
                             user: {
                                 bsonType: 'string',
                                 description: 'El ID del usuario que ingresó el objetivo, campo obligatorio.'
@@ -84,6 +92,9 @@ db.createCollection('projects', {
                         bsonType: ['object'],
                         required: ['studentId', 'joinDate', 'leftDate', 'status'],
                         properties: {
+                            id: {
+                                bsonType: 'objectId'
+                            },
                             studentId: {
                                 bsonType: 'string',
                                 description: 'El ID del estudiante que hizo la inscripción, campo obligatorio.'
@@ -97,7 +108,7 @@ db.createCollection('projects', {
                                 description: 'Fecha Final, campo obligatorio.'
                             },
                             status: {
-                                enum: ["Pendiente","Aceptado", "Rechazado"],
+                                enum: ["Pendiente", "Aceptado", "Rechazado"],
                                 description: 'Estado de la inscripción, campo obligatorio.'
                             }
 
@@ -112,6 +123,9 @@ db.createCollection('projects', {
                         bsonType: ['object'],
                         required: ['date', 'description', 'createdBy'],
                         properties: {
+                            id: {
+                                bsonType: 'objectId'
+                            },
                             date: {
                                 bsonType: 'string',
                                 description: 'Fecha del registro, campo obligatorio.'
