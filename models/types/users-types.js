@@ -9,12 +9,13 @@ const tiposUser = gql`
     lastName: String!
     password: String!
     status: Enum_userStatus!
-    rol: Enum_userRol!
+    role: Enum_userRol!
   }
 
   type Query {
     Users: [User]
     User(_id: String!): User
+    Students: [User]
   }
 
   type Mutation {
@@ -25,7 +26,7 @@ const tiposUser = gql`
         lastName: String!
         password: String!
         status: Enum_userStatus!
-        rol: Enum_userRol!
+        role: Enum_userRol!
     ): User
 
     editUser(

@@ -2,11 +2,22 @@ import { gql } from 'apollo-server-express';
 
 const tiposProject = gql`
   type objectiveItem {
+    id: String!
     user: String!
     objective: String!
   }
   
   type inscriptionItem {
+    id: String!
+    studentId: String!
+    joinDate: String!
+    leftDate: String!
+    status: Enum_insProj!
+  }
+
+  type inscriptionItemWithProject{
+    projectId: String!
+    id: String!
     studentId: String!
     joinDate: String!
     leftDate: String!
@@ -14,6 +25,7 @@ const tiposProject = gql`
   }
   
   type progressItem {
+    id: String!
     date: String!
     description: String!
     observation: String!
@@ -47,8 +59,12 @@ const tiposProject = gql`
     progress: [progressItem]
   }
   
+  
   type Query {
+    Project(_id: String!):Project
     Projects: [Project]
+    myProjects(leaderId:String!): [Project]
+    myRequests(leaderId:String!): [inscriptionItemWithProject]
   }
 
   type Mutation {

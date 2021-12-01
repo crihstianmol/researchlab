@@ -29,7 +29,7 @@ const projectSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ['Pendiente','Activo', 'Inactivo'],
+      enum: ['Activo', 'Inactivo'],
       default: 'Inactivo',
       required: true
     },
@@ -78,7 +78,7 @@ const projectSchema = new Schema(
         },
         status: {
           type: String,
-          enum: ['Aceptado', 'Rechazado'],
+          enum: ['Pendiente','Aceptado', 'Rechazado'],
           required: true
         },
       }

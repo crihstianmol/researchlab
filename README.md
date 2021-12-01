@@ -8,7 +8,7 @@
 | ------------------------ | ------------- |
 | Sofía Betancourt López   | Desarrollador |
 | Laura Montana            | Analista      |
-|                          | DB Admin      |
+| Juan Esteban Pino        | DB Admin      |
 | Crihstian Molina         | Scrum Master  |
 | Jhon Jairo Garces Montes | Product Owner |
 
