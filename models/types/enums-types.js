@@ -14,6 +14,7 @@ const tiposEnums = gql`
   }
   
   enum Enum_insProj {
+      Pendiente
       Aceptado
       Rechazado
   }

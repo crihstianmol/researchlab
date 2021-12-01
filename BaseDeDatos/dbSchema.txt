@@ -97,7 +97,7 @@ db.createCollection('projects', {
                                 description: 'Fecha Final, campo obligatorio.'
                             },
                             status: {
-                                enum: ["Aceptado", "Rechazado"],
+                                enum: ["Pendiente","Aceptado", "Rechazado"],
                                 description: 'Estado de la inscripción, campo obligatorio.'
                             }
 

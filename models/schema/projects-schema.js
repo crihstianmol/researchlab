@@ -29,7 +29,7 @@ const projectSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ['Activo', 'Inactivo'],
+      enum: ['Pendiente','Activo', 'Inactivo'],
       default: 'Inactivo',
       required: true
     },
