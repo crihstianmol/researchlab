@@ -167,7 +167,7 @@ db.createCollection('users', {
                     description: 'Estatus del usuario, campo obligatorio.'
                 },
                 role: {
-                    enum: ["Estudiante", "Líder", "Admin"],
+                    enum: ["Estudiante", "Lider", "Admin"],
                     description: 'Rol del usuario, campo obligatorio.'
                 },
             }

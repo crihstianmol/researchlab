@@ -31,7 +31,7 @@ const userSchema = new Schema(
         },
         role: {
             type: String,
-            enum: ['Estudiante', 'Líder', 'Admin'],
+            enum: ['Estudiante', 'Lider', 'Admin'],
             default:'Pendiente',
             required: true
         },
