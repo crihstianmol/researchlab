@@ -1,4 +1,4 @@
-import { UserModel } from '../schema/users-schema';
+import { UserModel } from '../schema/users-schema.js';
 
 const userResolvers = {
 

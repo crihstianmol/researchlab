@@ -1,18 +1,13 @@
-const mongoose = require('mongoose');
-const user = process.env.USER;
-const pw = process.env.PW;
-const dbendpoint = process.env.DBENDPOINT;
-const dbname = process.env.DBNAME;
-const mongoUrl = `mongodb+srv://${user}:${pw}@${dbendpoint}/${dbname}?retryWrites=true&w=majority`;
+import mongoose from 'mongoose';
 
 mongoose.set('runValidators', true);
 
-const db = mongoose.connect(mongoUrl, {}, (error) => {
-  if (error) {
-    console.log(`Error conectando a mongo ${error} `);
-  } else {
-    console.log('Conectado a mongo');
-  }
-});
-
-module.exports = db;
+const dbConnection = async() =>{
+  return await mongoose.connect(process.env.DBCONNECTIONSTRING).then(() => {
+    console.log('Conectado a MongoDB');
+  })
+  .catch((e) => {
+    console.error('Hubo un error en la conexión: ', e);
+  });
+}
+export default dbConnection;

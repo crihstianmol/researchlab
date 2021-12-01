@@ -2,24 +2,29 @@ import express from 'express';
 import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
 import dotenv from 'dotenv';
-import db from './driver/mongo-connection';
+import dbConnection from './driver/mongo-connection.js';
 import { tipos } from './graphql/types.js';
 import { resolvers } from './graphql/resolvers.js';
 
 
 dotenv.config();
 
-const port = process.env.PORT;
-const backApp = express();
+const server = new ApolloServer({
+    typeDefs: tipos,
+    resolvers: resolvers
+});
 
-backApp.use(cors())
-backApp.use(express.json())
+const app = express();
 
+app.use(express.json());
 
-backApp.get('/', (req, res) => {
-    res.send('Welcome to ResearchLab App API')
-})
+app.use(cors());
 
-backApp.listen(port,()=>{
-    console.log(`Running in port ${port}`)
-})
+app.listen({ port: process.env.PORT || 4000 }, async () => {
+    await dbConnection();
+    await server.start();
+
+    server.applyMiddleware({ app });
+
+    console.log('servidor listo');
+});

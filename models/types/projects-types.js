@@ -22,23 +22,19 @@ const tiposProject = gql`
   
   input projectFields{
     projectName: String
-    budget: Double
+    budget: Float
     startDate: String
     endDate: String
     leaderId: String
     leaderName: String
     status: Enum_statusProj
     phase: Enum_phaseProj
-    generalObj: [objectiveItem]
-    specificObj: [objectiveItem]
-    inscriptions: [inscriptionItem]
-    progress: [progressItem]
   }
 
   type Project {
     _id: ID!
     projectName: String!
-    budget: Double!
+    budget: Float!
     startDate: String!
     endDate: String!
     leaderId: String!
@@ -58,17 +54,13 @@ const tiposProject = gql`
   type Mutation {
     createProject(
         projectName: String!
-        budget: Double!
+        budget: Float!
         startDate: String!
         endDate: String!
         leaderId: String!
         leaderName: String!
         status: Enum_statusProj!
         phase: Enum_phaseProj!
-        generalObj: [objectiveItem]
-        specificObj: [objectiveItem]
-        inscriptions: [inscriptionItem]
-        progress: [progressItem]
     ): Project
 
     editProject(_id: String!, fields: projectFields!): Project
