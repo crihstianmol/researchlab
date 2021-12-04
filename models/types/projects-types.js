@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server-express';
+import { gql } from "apollo-server-express";
 
 const tiposProject = gql`
   type objectiveItem {
@@ -6,7 +6,7 @@ const tiposProject = gql`
     user: String!
     objective: String!
   }
-  
+
   type inscriptionItem {
     id: String!
     studentId: String!
@@ -15,7 +15,7 @@ const tiposProject = gql`
     status: Enum_insProj!
   }
 
-  type inscriptionItemWithProject{
+  type inscriptionItemWithProject {
     projectId: String!
     id: String!
     studentId: String!
@@ -23,7 +23,7 @@ const tiposProject = gql`
     leftDate: String!
     status: Enum_insProj!
   }
-  
+
   type progressItem {
     id: String!
     date: String!
@@ -31,8 +31,8 @@ const tiposProject = gql`
     observation: String!
     createdBy: String!
   }
-  
-  input projectFields{
+
+  input projectFields {
     projectName: String
     budget: Float
     startDate: String
@@ -58,29 +58,45 @@ const tiposProject = gql`
     inscriptions: [inscriptionItem]
     progress: [progressItem]
   }
-  
-  
+
   type Query {
-    Project(_id: String!):Project
+    Project(_id: String!): Project
     Projects: [Project]
-    myProjects(leaderId:String!): [Project]
-    myRequests(leaderId:String!): [inscriptionItemWithProject]
+    myProjects(leaderId: String!): [Project]
+    myRequests(leaderId: String!): [inscriptionItemWithProject]
   }
 
   type Mutation {
     createProject(
-        projectName: String!
-        budget: Float!
-        startDate: String!
-        endDate: String!
-        leaderId: String!
-        leaderName: String!
-        status: Enum_statusProj!
-        phase: Enum_phaseProj!
+      projectName: String!
+      budget: Float!
+      startDate: String!
+      endDate: String!
+      leaderId: String!
+      leaderName: String!
+      status: Enum_statusProj!
+      phase: Enum_phaseProj!
     ): Project
 
+    updateProjectPhase(phase: String!, _id: String!): Project
+
+    updateStatusProject(_id: String!, status: String!): Project
+
+    createProgress(
+      _id: String!
+      date: String!
+      description: String!
+      observation: String!
+      createdBy: String!
+    ): progressItem
+
+    updateProgress(
+      _id: String!
+      id_prog: String!
+      description: String!
+    ): progressItem
+
     editProject(_id: String!, fields: projectFields!): Project
-    
   }
 `;
 
