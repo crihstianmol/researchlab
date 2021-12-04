@@ -171,6 +171,24 @@ db.projects.updateOne({
     }
 )
 
+//Actualizar la descripcion de un avance del Proyecto
+db.projects.updateOne({
+    _id: ObjectId("61a7c36f4cd3b3e7b0981bbd")
+},
+    {
+        $set: {
+            progress: {
+                $each: [{
+                    date: "2021-12-01",
+                    description: "Descripcion",
+                    observation: "OBS",
+                    createdBy: "1006108674"
+                }]
+            }
+        }
+    }
+)
+
 //Actualizar una propiedad de una Inscripcion
 db.projects.updateOne({
     "progress.id": ObjectId("61a7ca794cd3b3e7b0981bc1")
@@ -211,6 +229,7 @@ db.users.find({ name: "Crihstian" })
 
 //Actualizar el estado de un usuario a Autorizado
 db.users.updateOne({
+
     //Es bueno intentar hacerlo por una propiedad unica, ya sea email, DNI o _id
     _id: ObjectId("61a7cee54cd3b3e7b0981bc2")
 },
@@ -225,3 +244,25 @@ db.users.deleteOne({
     _id: ObjectId("61a7cee54cd3b3e7b0981bc2")
 })
 
+//Actualizar estado de un Proyecto
+db.projects.updateOne({
+    _id: ObjectId("61a7c36f4cd3b3e7b0981bbd")
+},
+    { 
+        $set:{
+            status:"Activo" 
+        }
+
+    }
+)
+//Actualizar fase de un Proyecto
+db.projects.updateOne({
+    _id: ObjectId("61a7c36f4cd3b3e7b0981bbd")
+},
+    { 
+        $set:{
+            phase:"Iniciado" 
+        }
+
+    }
+)

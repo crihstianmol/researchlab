@@ -40,6 +40,8 @@ const tiposUser = gql`
     ): User
 
     deleteUser(_id: String, email: String): User
+
+    
   }
 `;
 
