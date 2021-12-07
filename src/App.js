@@ -12,6 +12,7 @@ import AdminProyectos from "./Pages/AdminProyectos";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
+import CrearAvance from "./Pages/CrearAvance";
 
 
 function App() {

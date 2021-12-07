@@ -4,6 +4,8 @@ import CurrencyTextField from "@unicef/material-ui-currency-textfield";
 import MenuItem from "@mui/material/MenuItem";
 import "./CrearProyecto.css";
 
+// Creacion de proyecto HU_012
+
 function CrearProyecto(addProyecto) {
   const [proyecto, setProyecto] = useState({
     nombreProyecto: "",

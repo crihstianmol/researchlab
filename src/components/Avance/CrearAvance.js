@@ -1,33 +1,36 @@
-import { Button } from "@mui/material";
+import { Button, Paper, TextField } from "@mui/material";
 import React from "react";
+
+// Agregar descripcion avance HU_022
 
 function CrearAvance() {
   return (
     <div className="BodyAvance">
       <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
         <div className="vistaPrevia-prj">
+          <h1>Agregar Nuevo Avance </h1>
           <TextField
             name="avance"
-            value={value}
+            // value={value}
             label="ID avance"
             fullWidth
             autoComplete="off"
             margin="normal"
-            onChange={changeHandler}
+            // onChange={changeHandler}
           />
           <TextField
             name="avance"
-            value={value}
+            // value={value}
             label="ID del proyecto"
             fullWidth
             autoComplete="off"
             margin="normal"
-            onChange={changeHandler}
+            // onChange={changeHandler}
           />
           <TextField
             name="fchAvance"
-            value={value}
-            onChange={changeHandler}
+            // value={value}
+            // onChange={changeHandler}
             label="Fecha del Avance"
             type="date"
             defaultValue="2017-05-24"
@@ -40,8 +43,8 @@ function CrearAvance() {
           <TextField
             label="Descripcion del avance:"
             name="DespAvance"
-            value={value}
-            onChange={changeHandler}
+            // value={value}
+            // onChange={changeHandler}
             multiline
             maxRows={4}
             fullWidth
