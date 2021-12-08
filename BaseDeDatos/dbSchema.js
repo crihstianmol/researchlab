@@ -1,10 +1,10 @@
-//use researchlab-db
+// use researchlab-db
 
 db.createCollection('projects', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
-            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status', 'phase'],
+            required: ['projectName', 'budget', 'startDate', 'endDate', 'leaderId', 'leaderName', 'status'],
             properties: {
                 projectName: {
                     bsonType: 'string',

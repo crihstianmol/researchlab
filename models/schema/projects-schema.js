@@ -30,8 +30,7 @@ const projectSchema = new Schema(
     status: {
       type: String,
       enum: ['Activo', 'Inactivo'],
-      default: 'Inactivo',
-      required: true
+      default: 'Inactivo'
     },
     phase: {
       type: String,
@@ -78,12 +77,12 @@ const projectSchema = new Schema(
         },
         status: {
           type: String,
-          enum: ['Pendiente','Aceptado', 'Rechazado'],
+          enum: ['Pendiente', 'Aceptado', 'Rechazado'],
           required: true
         },
       }
     ],
-    progress:[
+    progress: [
       {
         date: {
           type: String,
@@ -94,8 +93,7 @@ const projectSchema = new Schema(
           required: true
         },
         observation: {
-          type: String,
-          required: true
+          type: String
         },
         createdBy: {
           type: String,
@@ -105,6 +103,7 @@ const projectSchema = new Schema(
     ]
   },
   {
+    versionKey: false,
     toJSON: { virtuals: true }, // So `res.json()` and other `JSON.stringify()` functions include virtuals
     toObject: { virtuals: true }, // So `console.log()` and other functions that use `toObject()` include virtuals
   }
