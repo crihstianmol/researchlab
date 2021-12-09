@@ -46,7 +46,7 @@ function Login() {
         </div>
         <div className="login-form-container">
           <div className="login-card">
-            <br/>
+            <br />
             <h4>Iniciar sesión</h4>
             <form>
               <div className="input-container">
@@ -101,7 +101,9 @@ function Login() {
                   <button> Iniciar sesión </button>
                 </div>
                 <div className="btn-Registro">
-                  <button> Registrarse</button>
+                  <button className="btn-Registro">
+                    <Link to="/Registro"> Registrarse </Link>
+                  </button>
                 </div>
               </div>
               <label>¿Olvidó su contraseña?</label>

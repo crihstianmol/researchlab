@@ -1,0 +1,21 @@
+.title-dt-grid h2 {
+    margin: 10px;
+    padding: 15px;
+}
+
+.lst-avance {
+  width: 1300px;
+  height: 450px;
+  position: relative;
+}
+
+.dt-grid {
+    margin-top: 10px;
+  justify-content: center;
+  width: 1100px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

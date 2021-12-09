@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("/src/img/bgrd.jpg") no-repeat center top;
+  background-size: cover;
+}
+
+.form-registro {
+  padding: 70px 30px;
+  width: 700px;
+  height: 780px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.form-registro h1 {
+  text-align: center;
+  font-weight: bold;
+}
+.btn-registrarse button {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+  text-align: center;
+}
