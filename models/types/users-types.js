@@ -63,6 +63,7 @@ const tiposUser = gql`
         lastName: String
         password: String
         role: Enum_userRol
+        status: Enum_userStatus
     ): UserReg
   }
 `;
