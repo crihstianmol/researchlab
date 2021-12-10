@@ -72,7 +72,7 @@ function CrearProyecto(addProyecto) {
     <div className="form-container">
       <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
         <div className="container-title">
-          <h1>Registrar Nuevo proyecto</h1>
+          <h1>Registrar nuevo proyecto : </h1>
           <br />
         </div>
         <div className="form-items">

@@ -30,7 +30,7 @@ export const ListarAvance = () => {
     <div>
       <Paper className="lst-avance">
         <div className="title-dt-grid">
-          <h2> Lista de Avances </h2>
+          <h2> Lista de avances: </h2>
         </div>
         <div className="dt-grid">
           <DataGrid

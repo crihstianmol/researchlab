@@ -19,3 +19,40 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.btn-agregar-avance {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.btn-agregar-avance button{
+  width: 50%;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+}
+
+.btn-Obs-avance {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.btn-Obs-avance button{
+  width: 50%;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+  
+}

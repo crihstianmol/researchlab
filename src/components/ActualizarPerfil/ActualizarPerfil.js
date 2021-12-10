@@ -13,7 +13,7 @@ function ActualizarPerfil() {
   return (
     <div className="act-perf-container">
       <div className="act-perf-paper">
-        <h1 className="act-perf-title">Actualizar Perfil</h1>
+        <h1 className="act-perf-title">Actualizar perfil : </h1>
         <TextField
           required
           id="email"
