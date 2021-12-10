@@ -1,14 +1,18 @@
-import { Button, Paper, TextField } from "@mui/material";
 import React from "react";
+import { outlinedInputClasses, Paper, TextField } from "@mui/material";
+import './avance.css'
 
-// Agregar descripcion avance HU_022
 
-function CrearAvance() {
+// Añadir sus observaciones a dicho avance (HU_018)
+
+// Por favor tener en cuenta que todos los textfields son outputs , el unico input seria la descripcion.
+
+export const AgregarObservacion = () => {
   return (
     <div className="BodyAvance">
       <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
         <div className="vistaPrevia-prj">
-          <h1>Agregar nuevo avance :</h1>
+          <h1>Agregar observacion al avance :</h1>
           <TextField
             name="avance"
             // value={value}
@@ -51,13 +55,23 @@ function CrearAvance() {
             autoComplete="off"
             margin="normal"
           />
+
+          <TextField
+            label="Observacion del avance:"
+            name="ObsAvance"
+            // value={value}
+            // onChange={changeHandler}
+            multiline
+            maxRows={4}
+            fullWidth
+            autoComplete="off"
+            margin="normal"
+          />
         </div>
-        <div className="btn-agregar-avance">
-          <button>Guardar avance</button>
+        <div className="btn-Obs-avance">
+          <button>Guardar Observacion</button>
         </div>
       </Paper>
     </div>
   );
-}
-
-export default CrearAvance;
+};
