@@ -18,6 +18,7 @@ const userResolvers = {
       const userArgs = args;
       if (userArgs.password) {
         const salt = bcrypt.genSaltSync();
+        userArgs.status = userArgs.status.replace("_", " ");
         userArgs.password = bcrypt.hashSync(userArgs.password, salt);
         let user = await UserModel.findOneAndUpdate(
           { _id: userArgs._id }, userArgs
