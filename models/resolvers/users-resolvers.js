@@ -16,6 +16,9 @@ const userResolvers = {
 
     updateUser: async (root, args) => {
       const userArgs = args;
+      if(userArgs.status){
+        userArgs.status = userArgs.status.replace("_", " ");
+      }
       if (userArgs.password) {
         const salt = bcrypt.genSaltSync();
         userArgs.status = userArgs.status.replace("_", " ");
@@ -34,6 +37,7 @@ const userResolvers = {
           }
         );
         user = await UserModel.findOne({ _id: userArgs._id })
+        user.status = user.status.replace(" ", "_");
         user.password = ""
         return user;
       }
