@@ -26,9 +26,8 @@ const projectResolvers = {
       if (projectargs.budget) {
         projectargs.budget = (projectargs.budget * 1.01).toFixed(2)
       }
-      console.log(projectargs);
       let project = await ProjectModel.findOneAndUpdate({ _id: projectargs._id }, projectargs);
-      project = await ProjectModel.find({ _id: projectargs._id })
+      project = await ProjectModel.findOne({ _id: projectargs._id })
       return project;
     },
     createInscription: async (root, args) => {
