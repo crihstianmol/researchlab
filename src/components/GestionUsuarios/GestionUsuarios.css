@@ -1,0 +1,19 @@
+.gestusu-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.gestusu-table-container{
+    margin: 1rem 2rem;
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.gestusu-button{
+    margin: 1rem 2rem;
+    margin-left: auto;
+}
