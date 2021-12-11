@@ -76,7 +76,6 @@ const userResolvers = {
         element.status = element.status.replace(" ", "_");
         element.role = element.role.replace(" ", "_");
       })
-      console.log(usersList)
       return usersList;
     },
     loginUser: async (root, args) => {
