@@ -59,7 +59,7 @@ const userResolvers = {
         filtro.lastName = args.lastName
       }
       if (args.role) {
-        args.role = args.role.replace("_", " ");
+        
         filtro.role = args.role
       }
       if (args.status) {
@@ -69,7 +69,10 @@ const userResolvers = {
       const usersList = await UserModel.find(filtro);
       usersList.forEach((element)=>{
         element.password = ''
+        element.status = element.status.replace(" ", "_");
+        element.role = element.role.replace(" ", "_");
       })
+      console.log(usersList)
       return usersList;
     },
     loginUser: async (root, args) => {
