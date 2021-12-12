@@ -9,7 +9,7 @@ import MisProyectos from "./Pages/MisProyectos";
 import CrearProyecto from "./components/Crearproyecto/CrearProyecto";
 import CrearAvance from "./components/Avance/CrearAvance"
 import GestionUsuarios from "./components/GestionUsuarios/GestionUsuarios";
-import AdminProyectos from "./Pages/AdminProyectos";
+import AdminProyectos from "./components/AdminProyectos/AdminProyectos";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
