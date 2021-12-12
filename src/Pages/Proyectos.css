@@ -11,7 +11,7 @@
   justify-content: space-evenly;
   flex-direction: row;
 }
-.Lista-opciones Button {
+.detalles-button Button {
   text-transform: initial;
   margin-left: 25px;
 }

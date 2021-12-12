@@ -143,6 +143,7 @@ function AdminProyectos() {
     const [autProjects, setAutProjects] = useState([])
     const [isOpenModal, openModal, closeModal] = usePopUp();
 
+    
     return (
       <div className="Contenedor-proyectos">
         <h1>Proyectos disponibles</h1>

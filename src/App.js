@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import ActualizarPerfil from "./components/ActualizarPerfil/ActualizarPerfil";
 import Proyectos from "./Pages/Proyectos";
 import MisProyectos from "./Pages/MisProyectos";
-import CrearProyecto from "./components/Crearproyecto/CrearProyecto";
+import CrearProyecto from "./components/CrearProyectos/CrearProyecto";
 import CrearAvance from "./components/Avance/CrearAvance"
 import GestionUsuarios from "./components/GestionUsuarios/GestionUsuarios";
 import AdminProyectos from "./components/AdminProyectos/AdminProyectos";
@@ -14,6 +14,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import { AgregarObservacion } from "./components/Avance/AgregarObservacion";
+import Inscripciones from "./components/EstdProyectos/Inscripciones";
 
 
 

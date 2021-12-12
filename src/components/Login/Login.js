@@ -100,7 +100,7 @@ function Login() {
                 <div className="btn-login">
                   <button> Iniciar sesión </button>
                 </div>
-                <div className="btn-Registro">
+                <div className="btnRegistro">
                   <button className="btn-Registro">
                     <Link to="/Registro"> Registrarse </Link>
                   </button>

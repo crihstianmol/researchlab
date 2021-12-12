@@ -1,6 +1,7 @@
 import React from "react";
-import { outlinedInputClasses, Paper, TextField } from "@mui/material";
-import './avance.css'
+import { Paper, TextField } from "@mui/material";
+import './ObsAvance.css'
+
 
 
 // Añadir sus observaciones a dicho avance (HU_018)
@@ -10,52 +11,14 @@ import './avance.css'
 export const AgregarObservacion = () => {
   return (
     <div className="BodyAvance">
-      <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
-        <div className="vistaPrevia-prj">
-          <h1>Agregar observacion al avance :</h1>
-          <TextField
-            name="avance"
-            // value={value}
-            label="ID avance"
-            fullWidth
-            autoComplete="off"
-            margin="normal"
-            // onChange={changeHandler}
-          />
-          <TextField
-            name="avance"
-            // value={value}
-            label="ID del proyecto"
-            fullWidth
-            autoComplete="off"
-            margin="normal"
-            // onChange={changeHandler}
-          />
-          <TextField
-            name="fchAvance"
-            // value={value}
-            // onChange={changeHandler}
-            label="Fecha del Avance"
-            type="date"
-            defaultValue="2017-05-24"
-            sx={{ width: 220 }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            margin="normal"
-          />
-          <TextField
-            label="Descripcion del avance:"
-            name="DespAvance"
-            // value={value}
-            // onChange={changeHandler}
-            multiline
-            maxRows={4}
-            fullWidth
-            autoComplete="off"
-            margin="normal"
-          />
-
+      <Paper  className= "contenedor-avance" style={{ margin: "10px 10%", padding: "25px 50px" }}>
+        <div className="vistaPrevia-avance">
+          <h2>Agregar observacion al avance :</h2>
+          <label>ID Avance:</label>
+          <label>ID del proyecto:</label>
+          <label>Fecha de avance:</label>
+          <label>Descripcion del avance</label>
+         
           <TextField
             label="Observacion del avance:"
             name="ObsAvance"
