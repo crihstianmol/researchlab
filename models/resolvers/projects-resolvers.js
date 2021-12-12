@@ -271,7 +271,12 @@ const projectResolvers = {
       if (args.phase) {
         filtro.phase = args.phase
       }
-      const projects = await ProjectModel.find(filtro);
+      let projects = await ProjectModel.find(filtro);
+      projects = projects.map(project =>{
+        project.phase = project.phase.replace(" ","_")
+        return project
+      })
+      console.log(projects)
       return projects;
     },
     Inscriptions: async (root, args) => {
