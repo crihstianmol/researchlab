@@ -28,6 +28,7 @@ const projectResolvers = {
       }
       let project = await ProjectModel.findOneAndUpdate({ _id: projectargs._id }, projectargs);
       project = await ProjectModel.findOne({ _id: projectargs._id })
+      project.phase = project.phase.replace(" ","_")
       return project;
     },
     createInscription: async (root, args) => {
