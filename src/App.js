@@ -15,6 +15,7 @@ import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import { AgregarObservacion } from "./components/Avance/AgregarObservacion";
 import Inscripciones from "./components/EstdProyectos/Inscripciones";
+import EditarAvance from "./components/Avance/EditarAvance";
 
 
 
