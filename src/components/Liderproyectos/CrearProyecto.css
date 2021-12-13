@@ -25,3 +25,15 @@
     display: flex;
     justify-content: center;
 }
+
+.btn-crear-proyecto button {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 25%;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+
+}

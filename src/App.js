@@ -6,17 +6,13 @@ import Home from "./Pages/Home";
 import ActualizarPerfil from "./components/ActualizarPerfil/ActualizarPerfil";
 import Proyectos from "./Pages/Proyectos";
 import MisProyectos from "./Pages/MisProyectos";
-import CrearProyecto from "./components/CrearProyectos/CrearProyecto";
-import CrearAvance from "./components/Avance/CrearAvance"
+import CrearProyecto from "./components/Liderproyectos/CrearProyecto";
 import GestionUsuarios from "./components/GestionUsuarios/GestionUsuarios";
 import AdminProyectos from "./components/AdminProyectos/AdminProyectos";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
-import { AgregarObservacion } from "./components/Avance/AgregarObservacion";
-import Inscripciones from "./components/EstdProyectos/Inscripciones";
-import EditarAvance from "./components/Avance/EditarAvance";
-
+import ListaInscritos from "./components/Liderproyectos/ListaInscritos";
 
 
 
@@ -35,7 +31,7 @@ function App() {
        
           <Route path="/ActualizarPerfil" element={<><Header /><div className="body-container"> <Sidebar /> <ActualizarPerfil /></div><Footer /></>}></Route>
           <Route path="/Proyectos" element={<><Header /><div className="body-container"><Sidebar /><Proyectos /></div><Footer /></>}></Route>
-          <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><MisProyectos /></div><Footer /> </>}></Route>
+          <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><ListaInscritos /></div><Footer /> </>}></Route>
           <Route path="/CrearProyecto" element={<><Header /><div className="body-container"><Sidebar /> <CrearProyecto /></div><Footer /></>}></Route>
           <Route path="/GestionUsuarios" element={<><Header /><div className="body-container"><Sidebar/><GestionUsuarios /></div><Footer /></>}></Route>
           <Route path="/AdminProyectos" element={<><Header /> <div className="body-container"><Sidebar/><AdminProyectos /></div><Footer /></>}></Route>

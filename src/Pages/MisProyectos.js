@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import CrearProyecto from '../components/CrearProyectos/CrearProyecto';
-import Proyectos from './Proyectos';
+
 
 function MisProyectos() {
 

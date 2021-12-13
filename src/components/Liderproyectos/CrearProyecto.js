@@ -70,7 +70,7 @@ function CrearProyecto(addProyecto) {
 
   return (
     <div className="form-container">
-      <Paper style={{ margin: "10px 10%", padding: "25px 50px" }}>
+      <Paper className='prj-container'style={{ margin: "10px 10%", padding: "25px 50px" }}>
         <div className="container-title">
           <h1>Registrar nuevo proyecto : </h1>
           <br />
@@ -203,9 +203,9 @@ function CrearProyecto(addProyecto) {
             </div>
 
             <div className="btn-crear-proyecto">
-              <Button onClick={clickHandler} variant="contained">
+              <button onClick={clickHandler} variant="contained">
                 Crear Proyecto
-              </Button>
+              </button>
             </div>
           </form>
         </div>

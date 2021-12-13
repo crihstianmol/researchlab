@@ -117,12 +117,12 @@ export default function GestionUsuarios() {
     if(isChecked == "Autorizado"){
       setUsersAut([...usersAut,userAut._id])
       setUsersNoAut(usersNoAut.filter(user=>{
-        return user._id == userAut._id
+        return user._id === userAut._id
       }))
     }else{
       setUsersNoAut([...usersNoAut,userAut._id])
       setUsersAut(usersAut.filter(user=>{
-        return user._id == userAut._id
+        return user._id === userAut._id
       }))
     }
   }
