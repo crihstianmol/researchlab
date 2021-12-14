@@ -13,6 +13,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import ListaInscritos from "./components/Liderproyectos/ListaInscritos";
+import ListarAvance from "./components/EstdProyectos/ListarAvance";
 
 
 
@@ -31,7 +32,7 @@ function App() {
        
           <Route path="/ActualizarPerfil" element={<><Header /><div className="body-container"> <Sidebar /> <ActualizarPerfil /></div><Footer /></>}></Route>
           <Route path="/Proyectos" element={<><Header /><div className="body-container"><Sidebar /><Proyectos /></div><Footer /></>}></Route>
-          <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><ListaInscritos /></div><Footer /> </>}></Route>
+          <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><ListarAvance /></div><Footer /> </>}></Route>
           <Route path="/CrearProyecto" element={<><Header /><div className="body-container"><Sidebar /> <CrearProyecto /></div><Footer /></>}></Route>
           <Route path="/GestionUsuarios" element={<><Header /><div className="body-container"><Sidebar/><GestionUsuarios /></div><Footer /></>}></Route>
           <Route path="/AdminProyectos" element={<><Header /> <div className="body-container"><Sidebar/><AdminProyectos /></div><Footer /></>}></Route>

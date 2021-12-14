@@ -1,47 +1,157 @@
-import { Paper } from "@mui/material";
-import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import './avance.css'
+import { Paper, TextField } from "@material-ui/core";
+import MaterialTable from "material-table";
+import React, { useState } from "react";
+import "./avance.css";
 
-// Listar los avances (HU_021)
-
-export const ListarAvance = () => {
-  const columns = [
-    { field: "idAvance", headerName: "ID Avance", width: 130 },
-    { field: "idProyecto", headerName: "ID Proyecto", width: 130 },
-    { field: "fechaAvance", headerName: "Fecha Avance",type: "date", width: 130 },
-    { field: "descripcion", headerName: "Descripcion Avance", width: 230 },
-    { field: "creadoPor", headerName: "Creado por", width: 150 },
-    { field: "observacion", headerName: "Observacion Lider", width: 230 },
+function ListarAvance() {
+  const columnas = [
+    {
+      title: "ID Avance",
+      field: "idavance",
+    },
+    {
+      title: "ID Proyecto",
+      field: "idproject",
+    },
+    {
+      title: "Fecha Avance",
+      field: "fechaAvance",
+      type: Date,
+    },
+    {
+      title: "Descripcion avance",
+      field: "descripcion",
+    },
+    {
+      title: "Creado por",
+      field: "creadoPor",
+    },
+    {
+      title: "Observacion Lider",
+      field: "observacion",
+    },
   ];
 
-  const rows = [
-    { id: 1, idAvance: "1525", idProyecto: "Jo151n", fechaAvance: "08/12/2021",descripcion:"Inicio muestreo",creadoPor:"Crhistian Molina",observacion:""  },
-    { id: 2, idAvance: "1515"},
-    { id: 3, idAvance: "45485"},
-    { id: 4, idAvance: "545652"},
-    { id: 5, idAvance: "418541"},
-    { id: 6, idAvance: "12541"},
-    { id: 7, idAvance: "45436"},
-    { id: 8, idAvance: "45256"},
-    { id: 9, idAvance: "545415"},
+  const data = [
+    {
+      idavance: "61aee2072cdde3d1729a63cb",
+      idproject: "61aee2072cdde3d1729a63c5",
+      fechaAvance: "06-12-2021",
+      descripcion: "Se avanzó con los Querys de los Usuarios",
+      creadoPor: "1006108674",
+      observacion: "",
+    },
   ];
+
+  const [modalAgregar, setModalAgregar] = useState(false);
+
+  const toogleAgregar = () => {
+    setModalAgregar(!modalAgregar);
+  };
+  if (modalAgregar) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+
   return (
-    <div>
-      <Paper className="lst-avance">
-        <div className="title-dt-grid">
-          <h2> Lista de avances: </h2>
+    <div className="container-avance">
+      <div className="avance-group">
+        <div>
+          <button onClick={toogleAgregar} className="btn-modal">
+            Agregar avance
+          </button>
         </div>
-        <div className="dt-grid">
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5]}
-            checkboxSelection
+        <div className="avances-tabla">
+          <MaterialTable
+            columns={columnas}
+            data={data}
+            title="Lista avances del proyecto"
+            actions={[
+              {
+                icon: "edit",
+                tooltip: "Editar avance",
+                onclick: (event, rowData) =>
+                  "Boton para agregar update enelavance" + rowData.descripcion,
+              },
+            ]}
+            options={{
+              actionsColumnIndex: -1,
+            }}
+            localization={{
+              header: {
+                actions: "Acciones",
+              },
+            }}
           />
         </div>
-      </Paper>
+      </div>
+
+      {modalAgregar && (
+        <div className="modal">
+          <div onClick={toogleAgregar} className="overlay"></div>
+          <div className="modal-content">
+            <h2>Agregar nuevo avance :</h2>
+            <TextField
+              name="avance"
+              // value={value}
+              label="ID avance"
+              fullWidth
+              autoComplete="off"
+              margin="normal"
+              // onChange={changeHandler}
+            />
+            <TextField
+              name="avance"
+              // value={value}
+              label="ID del proyecto"
+              fullWidth
+              autoComplete="off"
+              margin="normal"
+              // onChange={changeHandler}
+            />
+            <TextField
+              name="fchAvance"
+              // value={value}
+              // onChange={changeHandler}
+              label="Fecha del Avance"
+              type="date"
+              defaultValue="2017-05-24"
+              sx={{ width: 220 }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              margin="normal"
+            />
+            <TextField
+              label="Descripcion del avance:"
+              name="DespAvance"
+              // value={value}
+              // onChange={changeHandler}
+              multiline
+              maxRows={4}
+              fullWidth
+              autoComplete="off"
+              margin="normal"
+            />
+            <br/>
+            <br/>
+             <div className="btn-agregar-avance">
+            <button className="modal-btn" onClick={toogleAgregar}>
+              Guardar avance
+            </button>
+            <br/>
+            <br/>
+            <button className="Cerrar-modal" onClick={toogleAgregar}>
+              Cancelar
+            </button>
+          </div>
+          </div>
+         
+        </div>
+      )}
     </div>
   );
-};
+}
+
+export default ListarAvance;
