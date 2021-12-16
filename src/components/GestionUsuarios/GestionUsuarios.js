@@ -83,11 +83,12 @@ export default function GestionUsuarios() {
     })
     .then((response) => {
       console.info("Success update:", response)
+      getUsers();
     })
   }
 
   const isPend = (user) =>{
-    if(user.status == "Pendiente"){
+    if(user.status == "Pendiente" || user.status == "No_Autorizado"){
       return (
         <TableCell align="right" style={{display: "flex"}}>
           <div style={{marginLeft: "auto"}}>
@@ -134,7 +135,6 @@ export default function GestionUsuarios() {
     usersNoAut.forEach(id =>{
       updateUser(id,"No_Autorizado")
     })
-    getUsers();
   }
 
   const [users, setUsers] = useState([])
