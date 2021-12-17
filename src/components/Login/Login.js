@@ -12,6 +12,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { logUser } from "../../modules/Users";
 
 // Ventana de Login  HU_002
 
@@ -98,7 +99,7 @@ function Login() {
               {/* Botones */}
               <div className="btn-container">
                 <div className="btn-login">
-                  <button> Iniciar sesión </button>
+                  <button onClick={logUser(values.email, values.password)}> Iniciar sesión </button>
                 </div>
                 <div className="btnRegistro">
                   <button className="btn-Registro">

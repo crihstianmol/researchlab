@@ -1,0 +1,16 @@
+.contenedor-desplegable {
+    display: block;
+    margin: 10px;
+    display: 20px;
+}
+.header-proyecto-detalles {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    display: 20px;
+}
+
+.header-proyecto-detalles{
+    margin: 30px;
+    padding: 30px;
+}

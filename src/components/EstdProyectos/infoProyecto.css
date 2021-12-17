@@ -1,0 +1,4 @@
+.contenedor-detalles{
+    display: flex;
+    flex-direction: column;
+}
