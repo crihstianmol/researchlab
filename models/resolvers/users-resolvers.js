@@ -16,12 +16,11 @@ const userResolvers = {
 
     updateUser: async (root, args) => {
       const userArgs = args;
-      if(userArgs.status){
+      if (userArgs.status) {
         userArgs.status = userArgs.status.replace("_", " ");
       }
       if (userArgs.password) {
         const salt = bcrypt.genSaltSync();
-        userArgs.status = userArgs.status.replace("_", " ");
         userArgs.password = bcrypt.hashSync(userArgs.password, salt);
         let user = await UserModel.findOneAndUpdate(
           { _id: userArgs._id }, userArgs
@@ -64,7 +63,7 @@ const userResolvers = {
         filtro.lastName = args.lastName
       }
       if (args.role) {
-        
+
         filtro.role = args.role
       }
       if (args.status) {
@@ -72,7 +71,7 @@ const userResolvers = {
         filtro.status = args.status
       }
       const usersList = await UserModel.find(filtro);
-      usersList.forEach((element)=>{
+      usersList.forEach((element) => {
         element.password = ''
         element.status = element.status.replace(" ", "_");
         element.role = element.role.replace(" ", "_");
@@ -87,14 +86,20 @@ const userResolvers = {
       const user = args;
       const userFromDb = await UserModel.findOne({ email: user.email });
       if (userFromDb) {
-        if (bcrypt.compareSync(user.password, userFromDb.password)) {
-          const token = jwt.sign({ id: userFromDb._id, role: userFromDb.role }, process.env.JSON_WTKN, {
-            expiresIn: '6h'
-          });
-          response.response = "Ok";
-          response.jwt = token;
+        if (userFromDb.status == "Autorizado") {
+          if (bcrypt.compareSync(user.password, userFromDb.password)) {
+            const token = jwt.sign({ id: userFromDb._id, role: userFromDb.role }, process.env.JSON_WTKN, {
+              expiresIn: '30m'
+            });
+            response.response = "Ok";
+            response.jwt = token;
+          } else {
+            response.response = "Contraseña Incorrecta."
+          }
+        } else if (userFromDb.status == "No_Autorizado") {
+          response.response = "Lo sentimos, has sido Rechazado."
         } else {
-          response.response = "Contraseña Incorrecta."
+          response.response = "Lo sentimos, aún no has sido Autorizado."
         }
       } else {
         response.response = "No se encontró el usuario."
