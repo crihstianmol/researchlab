@@ -1,0 +1,19 @@
+.inscr-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inscr-table-container{
+    margin: 1rem 2rem;
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.inscr-button{
+    margin: 1rem 2rem;
+    margin-left: auto;
+}
