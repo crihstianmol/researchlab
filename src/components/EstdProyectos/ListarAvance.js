@@ -1,6 +1,7 @@
 import { Paper, TextField } from "@material-ui/core";
 import { Modal } from "@mui/material";
 import MaterialTable from "material-table";
+import Edit from '@material-ui/icons/Edit';
 import React, { useState } from "react";
 import "./avance.css";
 
@@ -131,11 +132,11 @@ function ListarAvance() {
         <div className="vista-container">
           <h2>Editar avance :</h2>
           <label>ID avance</label>
-          <br/>
+          <br />
           <label>ID proyecto</label>
-          <br/>
-          <br/>
-          
+          <br />
+          <br />
+
           <TextField
             name="fchAvance"
             // value={value}
@@ -149,8 +150,8 @@ function ListarAvance() {
             }}
             margin="dense"
           />
-          <br/>
-          <br/>
+          <br />
+          <br />
           <TextField
             label="Descripcion del avance:"
             name="DespAvance"

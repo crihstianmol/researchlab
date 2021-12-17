@@ -1,0 +1,21 @@
+.contenedor-proyecto {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 40px;
+}
+
+.header-proyecto-detalles label {
+  margin: 10px;
+  padding: 20px;
+}
+
+.summary-proyecto h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.detalles-proyecto {
+  width: 900px;
+  height: 300px;
+}
