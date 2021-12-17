@@ -13,7 +13,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import ListaInscritos from "./components/Liderproyectos/ListaInscritos";
-import ListarAvance from "./components/EstdProyectos/ListarAvance";
 import ProyectosStudent from "./components/EstdProyectos/ProyectosStudent";
 
 
