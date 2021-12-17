@@ -27,6 +27,7 @@ const userResolvers = {
           { _id: userArgs._id }, userArgs
         );
         user = await UserModel.findOne({ _id: userArgs._id })
+        user.status = user.status.replace(" ", "_");
         user.password = ""
         return user;
       } else {
