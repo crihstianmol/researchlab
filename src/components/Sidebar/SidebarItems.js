@@ -21,6 +21,16 @@ export const SidebarItems = [
         // icon: <TiDocumentText />,
         link: "/GestionUsuarios",
       },
+      {
+        title: "Lista Inscritos",
+        // icon: <TiDocumentText />,
+        link: "/ListaInscritos",
+      },
+      {
+        title: "Editar Proyectos",
+        // icon: <TiDocumentText />,
+        link: "/EditarProyectos",
+      },
     ],
     Estudiante: [
       {

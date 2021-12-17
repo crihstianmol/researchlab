@@ -14,6 +14,7 @@ import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import ListaInscritos from "./components/Liderproyectos/ListaInscritos";
 import ProyectosStudent from "./components/EstdProyectos/ProyectosStudent";
+import EditarProyectos from "./components/EditProyectos/EditProyectos";
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/GestionUsuarios" element={<><Header /><div className="body-container"><Sidebar/><GestionUsuarios /></div><Footer /></>}></Route>
           <Route path="/AdminProyectos" element={<><Header /> <div className="body-container"><Sidebar/><AdminProyectos /></div><Footer /></>}></Route>
           <Route path="/ListaInscritos" element={<><Header /> <div className="body-container"><Sidebar/><ListaInscritos /></div><Footer /></>}></Route>
+          <Route path="/EditarProyectos" element={<><Header /> <div className="body-container"><Sidebar/><EditarProyectos /></div><Footer /></>}></Route>
         </Routes>
       </Router>  
     </div>

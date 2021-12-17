@@ -11,7 +11,6 @@ import Paper from '@mui/material/Paper';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { Button } from "@mui/material";
-import {listUsers} from "../../modules/Users"
 import "./ListaInscritos.css"
 
 let times = 0
