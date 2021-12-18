@@ -15,8 +15,22 @@ const EditProyectosPopup = ({ isOpen, close, project}) => {
     };
 
     useEffect(() => {
-      }, []);
-  
+      const vals = {
+        name:project.projectName,
+        budget:project.budget
+      }
+      setValues(vals)
+      console.log(project.times)
+      console.log(values)
+      }, [isOpen]);
+    
+    const handleChange = (event) => {
+      setValues({...values,[event.target.name]:event.target.value});
+      console.log({...values,[event.target.name]:event.target.value})
+    };
+      
+    const [values, setValues] = useState({})
+
     return (
       <>
         <div
@@ -30,21 +44,33 @@ const EditProyectosPopup = ({ isOpen, close, project}) => {
                   <button onClick={() => close()}>X</button>
                 </div>
                 <div className="pop-label-title">
-                  <label>{"Id del Proyecto: " + project._id}</label>
+                  <label>{"Id del Proyecto: " + project._id+"   "+project.times}</label>
                 </div>
               </div>
-              <div className="pop-update-label pop-body">
+              <div className="pop-update-label pop-body-edit">
                 <TextField
-                    name="claveUsuario"
-                    label="Cree una contraseña:"
+                    name="name"
+                    label="Cambie el Nombre"
                     fullWidth
                     autoComplete="off"
                     margin="normal"
+                    value={values["name"]}
+                    onChange={handleChange}
+                  />
+                  <TextField
+                    name="budget"
+                    label="Cambie el Presupuesto"
+                    fullWidth
+                    autoComplete="off"
+                    margin="normal"
+                    value={values["budget"]}
+                    type="number"
+                    onChange={handleChange}
                   />
                 <div className="pop-projectbutton">
                   <ColorButton
                     variant="contained"
-                    onClick={() => close()}
+                    onClick={() => close(values,project)}
                   >
                     Guardar Cambios
                   </ColorButton>

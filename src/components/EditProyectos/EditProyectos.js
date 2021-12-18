@@ -44,7 +44,15 @@ function EditarProyectos() {
           console.error("There is an error:", error);
         })
         .then((response) => {
-          setProjects(response.data.Projects);
+          let pr = []
+          for(let n = 0;n<5;n++){
+            
+            let copiedPr = JSON.parse(JSON.stringify(response.data.Projects[0]));
+            copiedPr["times"]= n
+            pr.push(copiedPr)
+          }
+          setProjects(pr);
+          console.log(pr)
           response.data.Projects.forEach((project) => {
               getObjectives(project._id)
           })
@@ -89,18 +97,9 @@ function EditarProyectos() {
             setGenObj({...genObj,[projectId]:response.data.GeneralObjectives[0].generalObj})
             setSpecObj({...specObj,[projectId]:response.data.SpecificObjectives[0].specificObj})
           });
-      };
+    };
   
-
-    const updateProject = (_id,status,phase) => {
-      const variables={
-        _id:_id,
-        status:status,
-      }
-
-      if(phase){
-        variables.phase=phase
-      }
+    const updateProject = (_id,values) => {
 
       fetch('https://researchlab-app.herokuapp.com/graphql', {
         method: 'POST',
@@ -109,8 +108,8 @@ function EditarProyectos() {
         },
         body: JSON.stringify({
           query: `
-          mutation updateProject($_id: ID!,$status:Enum_statusProj,$phase:Enum_phaseProj) {
-            updateProject(_id: $_id,status:$status,phase:$phase) {
+          mutation updateProject($_id: ID!,$projectName:String,$budget:Float) {
+            updateProject(_id: $_id,projectName:$projectName,budget:$budget) {
               _id,
               projectName,
               status,
@@ -118,7 +117,11 @@ function EditarProyectos() {
             }
           }
         `,
-          variables: variables,
+          variables: {
+            _id:_id,
+            projectName:values.name,
+            budget:parseFloat(values.budget)
+          },
         }),
       }).then(res => res.json())
       .catch((error) => {
@@ -126,16 +129,26 @@ function EditarProyectos() {
       })
       .then((response) => {
         console.info("Success update:", response)
-        getProjects()
+        getProjects(leaderId)
       })
     }
 
     const printOptions = (project) =>{
       if(project.status === "Activo"){
+        const openProject = ()=>{
+          setActualProject(project)
+          openModal()
+        }
         return<>
-        <EditProyectosPopup isOpen={isOpenModal} close={()=>closeModal()} project={project} />
-        <Button size="small" variant="text" onClick={() =>openModal()} >Ver detalles</Button>
+        <Button size="small" variant="text" onClick={() =>openProject()} >Ver detalles</Button>
         </>
+      }
+    }
+
+    const close = (values,project) => {
+      closeModal()
+      if(values && project){
+        updateProject(project._id,values)
       }
     }
   
@@ -143,6 +156,7 @@ function EditarProyectos() {
     const [genObj, setGenObj] = useState({})
     const [specObj, setSpecObj] = useState({})
     const [isOpenModal, openModal, closeModal] = usePopUp();
+    const [actualProject, setActualProject] = useState({})
 
     
     return (
@@ -162,6 +176,7 @@ function EditarProyectos() {
               <div className="Lista-opciones">{printOptions(project)}</div>
             </Paper>
           ))}
+          <EditProyectosPopup isOpen={isOpenModal} close={close} project={actualProject} />
         </div>
       </div>
     );

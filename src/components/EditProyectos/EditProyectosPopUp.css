@@ -13,10 +13,9 @@
     border-bottom: 1px solid #000;
   }
   
-  .pop-body {
+  .pop-body-edit {
     display: flex;
     flex-direction: column;
-    background-color: #c3cfc9;
   }
   
   .pop-projectdata {
