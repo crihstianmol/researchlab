@@ -18,6 +18,7 @@ margin-top: 15px;
 justify-content: space-evenly;
 flex-direction: row;
 }
+
 .Lista-opciones Button {
 text-transform: initial;
 margin-left: 25px;
@@ -34,5 +35,3 @@ margin-left: 25px;
 .project-item{
     place-self: center center; 
 }
-
-  

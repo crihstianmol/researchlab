@@ -16,6 +16,9 @@ import "./ListaInscritos.css"
 let times = 0
 
 // HU_010 & HU_011 Listar Usuarios y cambiar estado
+// H15 Listar insritos
+// H16 Aceptar y rechazar inscritos
+
 let leaderId = "1006108674"
 
 const ColorButton = styled(Button)({
