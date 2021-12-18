@@ -119,11 +119,10 @@ const logUser = async (email, password) => {
     });
     let jsonobjetc = await response.json();
     if (jsonobjetc.errors) {
-        console.error(jsonobjetc.errors[0].message)
-        logData.error = jsonobjetc.errors[0].message
+        logData.response = jsonobjetc.errors[0].message
     } else {
         logData = jsonobjetc.data.loginUser
-        if (logData.response == "Ok") {
+        if (logData.response === "Ok") {
             logData.userInfo = jwt.decode(logData.jwt, process.env.JWTSECRET)
             if (logData.userInfo.role) {
                 localStorage.setItem('role', logData.userInfo.role)

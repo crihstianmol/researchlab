@@ -7,6 +7,12 @@ import usePopUp from "../../hooks/usePopUp";
 import "./AdminProyectos.css"
 import AdminProyectosPopup from "./AdminProyectosPopUp"
 
+// H6 LISTA TODOS LOS PROYECTOS
+// H7 APROBAR CREACION DEL PROYECTO
+// H8 ACTUALIZAR ESTADO
+// H9 ACTUALIZAR FASE
+
+
 const ColorButton = styled(Button)({
   backgroundColor: "#0f084b",
 });

@@ -20,7 +20,6 @@ function InfoProyecto() {
         <label>Nombre del Lider:</label>
         <label>Estado:</label>
         <label>Fase:</label>
-        <ListarAvance />
       </Paper>
     </div>
   );

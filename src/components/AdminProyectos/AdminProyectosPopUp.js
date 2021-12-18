@@ -3,6 +3,11 @@ import "./AdminProyectosPopUp.css"
 import { Button } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
+// H6 LISTA TODOS LOS PROYECTOS
+// H7 APROBAR CREACION DEL PROYECTO
+// H8 ACTUALIZAR ESTADO
+// H9 ACTUALIZAR FASE
+
 const ColorButton = styled(Button)({
     backgroundColor: "#fff",
     color:"#000",

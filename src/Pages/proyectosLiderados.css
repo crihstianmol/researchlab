@@ -1,0 +1,107 @@
+.dtls-proyecto {
+  display: flex;
+  flex-direction: column;
+  top: 30%;
+}
+.bdy-proyecto {
+    height: auto;
+}
+
+.cls-button {
+    position: relative;
+    top: 20px;
+    left: 100%;
+}
+.dtls-proyecto h2 {
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+.dtls-proyecto {
+  width: 60%;
+  position: relative;
+  top: 30%;
+  left: 15%;
+}
+.bnt-container {
+    position: relative;
+    left: 35%
+}
+.btn-Editar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30%;
+  height: 30px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.close-btn {
+  position: relative;
+  top: 20px;
+  left: 100%;
+}
+.detalles-proyecto {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-proyecto {
+  align-items: center;
+}
+
+.grd-btn {
+  width: 30%;
+  height: 30px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.cancelar-bnt {
+  width: 30%;
+  height: 30px;
+  background: #2c49a0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.project-form {
+  position: absolute;
+  left: 25%;
+  top:20%;
+  width: 300px;
+}
+.detalles-ver {
+  margin-top: 15px;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.detalles-ver button {
+  text-transform: initial;
+  left: 75%;
+}
+.editar-container h2{
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+.btn-container {
+  align-items: center;
+}

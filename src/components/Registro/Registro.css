@@ -1,8 +1,9 @@
-.body {
+body .contenedor-registro {
   margin: 0;
   padding: 0;
   background: url("/src/img/bgrd.jpg") no-repeat center top;
   background-size: cover;
+  height: 100vh;
 }
 
 .form-registro {

@@ -3,11 +3,7 @@ import "./proyectostudent.css";
 import { Button, Modal, Paper } from "@material-ui/core";
 import ListarAvance from "./ListarAvance";
 
-
-
 function ProyectosStudent() {
- 
-
   const [modalVer, setModalVer] = useState(false);
 
   const toogleVer = () => {
@@ -15,16 +11,16 @@ function ProyectosStudent() {
   };
 
   const bodyInfoproject = (
-    <div className="detalles-proyecto">
-       <div>
-        <button on onClick={() => toogleVer()}>
-          X
-        </button>
-      </div>
+    <div className="display-proyecto">
       <Paper
-        className="summary-proyecto"
+        className="info-proyecto"
         style={{ margin: "10px 10%", padding: "25px 50px" }}
       >
+        <div className="close-window">
+          <button on onClick={() => toogleVer()}>
+            X
+          </button>
+        </div>
         <h2>Detalles del proyecto: </h2>
         <label>Objetivos generales:</label>
         <label>Objetivos especificos:</label>
@@ -46,24 +42,28 @@ function ProyectosStudent() {
         <h1>Lista de mis proyectos en curso</h1>
       </div>
       <div className="detalles-proyecto">
-           <Paper
-        className="project-form"
-        style={{ margin: "10px 10%", padding: "25px 50px" }}
-      >
-        <div className="Info-project">
-          <h4>Nombre del proyecto:</h4>
-          <p>ID Proyecto: </p>
-          <p>Fecha de inicio: </p>
-        </div>
-        <div className="detalles-button">
-          <Button size="small" variant="text" onClick={toogleVer}>
-            Ver detalles
-          </Button>
-        </div>
-      </Paper>
-      <div>
+        <Paper
+          className="project-form"
+          style={{ margin: "10px 10%", padding: "25px 50px" }}
+        >
+          <div className="Info-project">
+            <h4>Nombre del proyecto:</h4>
+            <p>ID Proyecto: </p>
+            <p>Fecha de inicio: </p>
+          </div>
+          <div className="detalles-button">
+            <Button
+              className="dtl-button"
+              size="small"
+              variant="text"
+              onClick={toogleVer}
+            >
+              Ver detalles
+            </Button>
+          </div>
+        </Paper>
+        <div></div>
       </div>
-    </div>
       <div>
         <Modal open={modalVer} onClose={toogleVer}>
           {bodyInfoproject}
