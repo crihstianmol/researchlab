@@ -1,11 +1,13 @@
 import React from "react";
 import { Paper } from "@mui/material";
+import './proyectostudent.css'
+import ListarAvance from "./ListarAvance";
 
 function InfoProyecto() {
   return (
     <div className="detalles-proyecto">
       <Paper
-        className="contenedor-detalles"
+        className="summary-proyecto"
         style={{ margin: "10px 10%", padding: "25px 50px" }}
       >
         <h2>Detalles del proyecto: </h2>
@@ -14,10 +16,10 @@ function InfoProyecto() {
         <label>Presupuesto:</label>
         <label>Fecha de Inicio</label>
         <label>Fecha de finalizacion:</label>
-        <label>Id Lider</label>
-        <label>Nombre del Lider</label>
-        <label>Estado</label>
-        <label>Fase</label>
+        <label>Id Lider:</label>
+        <label>Nombre del Lider:</label>
+        <label>Estado:</label>
+        <label>Fase:</label>
       </Paper>
     </div>
   );

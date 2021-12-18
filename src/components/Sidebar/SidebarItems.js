@@ -16,6 +16,31 @@ export const SidebarItems = [
         // icon: <TiDocumentText />,
         link: "/CrearProyecto",
       },
+      {
+        title: "Gestion Usuario",
+        // icon: <TiDocumentText />,
+        link: "/GestionUsuarios",
+      },
+      {
+        title: "Lista Inscritos",
+        // icon: <TiDocumentText />,
+        link: "/ListaInscritos",
+      },
+      {
+        title: "Editar Proyectos",
+        // icon: <TiDocumentText />,
+        link: "/EditarProyectos",
+      },
+      {
+        title: "Proyectos liderados",
+        // icon: <TiDocumentText />,
+        link: "/proyectosLiderados",
+      },
+      {
+        title: "Administar Proyectos",
+        // icon: <TiDocumentText />,
+        link: "/AdminProyectos",
+      },
     ],
     Estudiante: [
       {
@@ -50,6 +75,7 @@ export const SidebarItems = [
         // icon: <TiDocumentText />,
         link: "/AdminProyectos",
       },
+      
     ],
   },
 ];

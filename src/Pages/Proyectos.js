@@ -1,79 +1,47 @@
-import { Button, Paper } from "@mui/material";
-import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import { Button, Modal, Paper } from "@mui/material";
+import React, { useState } from "react";
 import "./Proyectos.css";
+import '../components/EstdProyectos/inscripciones.css'
 
 // HU_019:Como estudiante podré ver la lista de los proyectos registrados en la plataforma
+// HU_020:Como estudiante, general una solicitud de inscripcion
+
 
 function Proyectos() {
-  // useEffect(() => {
-  //   getProjects();
-  // }, []);
+  const [modalInscripciones, setModalInscripciones] = useState(false);
 
-  // const getProjects = () => {
-  //   fetch('https://researchlab-app.herokuapp.com/graphql', {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       query: `
-  //       query Projects{
-  //           Projects{
-  //           _id,
-  //           projectName,
-  //           budget,
-  //           startDate,
-  //           endDate,
-  //           leaderId,
-  //           leaderName,
-  //           status,
-  //           phase
-  //         }
-  //       }
-  //     `,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .catch((error) => {
-  //       console.error("There is an error:", error);
-  //     })
-  //     .then((response) => {
-  //       setProjects(response.data.Projects)
-  //     });
-  // }
+  const toogleInscribir = () => {
+    setModalInscripciones(!modalInscripciones);
+  };
 
-  // const saveInscipcion = (_id,status,inscriptions) => {
-  //   const variables={
-  //     _id:_id,
-  //     status:status,
-  //   }
-  //   if(inscriptions){
-  //     variables.inscriptions=inscriptions
-  //   }
-  //   fetch('https://researchlab-app.herokuapp.com/graphql', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       query:`
-  //       mutation createInscription(
-  //         $_idProject: ID!
-  //         inscription: inscriptionInput
-  //       ): ProjectInscriptions`,
-  //       variables: variables,
-  //     }),
-  //   })
-  //   .then(res => res.json())
-  //   .catch((error) => {
-  //     console.error("There is an error:", error)
-  //   })
-  //   .then((response) => {
-  //     console.info("Success update:", response)
-  //     getProjects()
-  //   }),
-
+  const bodyInscribir = (
+    <div className="detalles-proyecto">
+      <Paper
+        className="contenedor-info"
+        style={{ margin: "10px 10%", padding: "25px 50px" }}
+      >
+        <h2>Detalles del proyecto: </h2>
+        <label>Id del proyecto:</label>
+        <label>Nombre del proyecto:</label>
+        <label>Nombre del lider:</label>
+        <label>Objetivos generales:</label>
+        <label>Objetivos especificos:</label>
+        <label>Presupuesto:</label>
+        <label>Fecha de Inicio</label>
+        <label>Fecha de finalizacion:</label>
+        <label>Id Lider</label>
+        <label>Nombre del Lider</label>
+        <label>Estado</label>
+        <label>Fase</label>
+        <br />
+        <div className="Btn-inscribirse">
+          <button onClick={toogleInscribir}>Inscribirse</button>
+          <br />
+          <button onClick={toogleInscribir}>Cancelar</button>
+        </div>
+      </Paper>
+    </div>
+  );
   return (
     <div className="Contenedor-Proyecto">
       <h1>Proyectos disponibles</h1>
@@ -91,13 +59,17 @@ function Proyectos() {
             <p>Fecha de inicio: </p>
           </div>
           <div className="detalles-button">
-            <Button size="small" variant="text">
-            <Link to="/Detatallesproject"> Ver detalles  </Link>
-
+            <Button size="small" variant="text" onClick={toogleInscribir}>
               Ver detalles
             </Button>
           </div>
         </Paper>
+
+        <Modal
+        open={modalInscripciones}
+        onClose={toogleInscribir}>
+          {bodyInscribir}
+        </Modal>
       </div>
     </div>
   );

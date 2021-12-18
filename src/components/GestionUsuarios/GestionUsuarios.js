@@ -13,6 +13,10 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import "./GestionUsuarios.css"
 
+// H4 & h5 Gestion Usuarios
+// H10 Listar estudiantes registrados
+// H11 Cambiar estado de estudiante
+
 const ColorButton = styled(Button)({
   backgroundColor: "#0f084b",
 });
@@ -118,12 +122,12 @@ export default function GestionUsuarios() {
     if(isChecked == "Autorizado"){
       setUsersAut([...usersAut,userAut._id])
       setUsersNoAut(usersNoAut.filter(user=>{
-        return user._id === userAut._id
+        return user !== userAut._id
       }))
     }else{
       setUsersNoAut([...usersNoAut,userAut._id])
       setUsersAut(usersAut.filter(user=>{
-        return user._id === userAut._id
+        return user !== userAut._id
       }))
     }
   }

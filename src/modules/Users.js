@@ -30,6 +30,9 @@ const listUsers = async (filter) => {
         usersList.error = jsonobjetc.errors[0].message
     } else {
         usersList = jsonobjetc.data.Users
+        if (filter._id) {
+            usersList = usersList.filter(user => user._id.includes(filter._id) )
+        }
         if (filter.email) {
             usersList = usersList.filter(user => user.email.includes(filter.email) )
         }

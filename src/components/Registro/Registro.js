@@ -4,6 +4,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Footer from "../../Pages/Footer";
 import "./Registro.css";
 
+// H1 Registro
+
 function Registro() {
   const rol = [
     {

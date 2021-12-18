@@ -1,52 +1,42 @@
 import { Button, Paper } from "@mui/material";
-import React, { Component, useState, useEffect } from 'react'
-import Checkbox from '@mui/material/Checkbox'
-import FormControlLabel from '@mui/material/FormControlLabel';
+import React, {useState, useEffect } from 'react'
 import { styled } from "@mui/material/styles";
 import usePopUp from "../../hooks/usePopUp";
-import "./AdminProyectos.css"
-import AdminProyectosPopup from "./AdminProyectosPopUp"
-
-// H6 LISTA TODOS LOS PROYECTOS
-// H7 APROBAR CREACION DEL PROYECTO
-// H8 ACTUALIZAR ESTADO
-// H9 ACTUALIZAR FASE
-
+import EditProyectosPopup from "./EditProyectosPopUp"
+import "./EditProyectos.css"
 
 const ColorButton = styled(Button)({
   backgroundColor: "#0f084b",
 });
 
+let leaderId = "1006108674"
 
-
-function AdminProyectos() {
+function EditarProyectos() {
 
     useEffect(() => {
-        getProjects();
+        getProjects(leaderId);
       }, []);
-    
-    const getProjects = () => {
-      fetch('https://researchlab-app.herokuapp.com/graphql', {
+
+    const getProjects = (leaderId) => {
+      fetch("https://researchlab-app.herokuapp.com/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           query: `
-          query Projects{
-              Projects{
-              _id,
-              projectName,
-              budget,
-              startDate,
-              endDate,
-              leaderId,
-              leaderName,
-              status,
-              phase
+        query Projects($leaderId: String) {
+            Projects(leaderId: $leaderId) {
+                _id,
+                projectName,
+                budget,
+                status
             }
-          }
+        }
         `,
+          variables: {
+            leaderId: leaderId,
+          },
         }),
       })
         .then((res) => res.json())
@@ -54,9 +44,53 @@ function AdminProyectos() {
           console.error("There is an error:", error);
         })
         .then((response) => {
-          setProjects(response.data.Projects)
+          setProjects(response.data.Projects);
+          response.data.Projects.forEach((project) => {
+              getObjectives(project._id)
+          })
         });
-    }
+    };
+
+    const getObjectives = (projectId) => {
+        fetch("https://researchlab-app.herokuapp.com/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `
+          query Objectives($_id: ID!) {
+            GeneralObjectives(_id: $_id) {
+                generalObj{
+                    id,
+                    user,
+                    objective,
+                }
+              }
+            SpecificObjectives(_id: $_id) {
+                specificObj{
+                    id,
+                    user,
+                    objective,
+                }
+              }
+          }
+          `,
+            variables: {
+              _id: projectId,
+            },
+          }),
+        })
+          .then((res) => res.json())
+          .catch((error) => {
+            console.error("There is an error:", error);
+          })
+          .then((response) => {
+            setGenObj({...genObj,[projectId]:response.data.GeneralObjectives[0].generalObj})
+            setSpecObj({...specObj,[projectId]:response.data.SpecificObjectives[0].specificObj})
+          });
+      };
+  
 
     const updateProject = (_id,status,phase) => {
       const variables={
@@ -97,56 +131,17 @@ function AdminProyectos() {
     }
 
     const printOptions = (project) =>{
-      if(project.status === "Inactivo"){
-        return<FormControlLabel
-          control={
-            <Checkbox
-              onChange={(event) =>
-                autorizeProject(event.target.checked, project)
-              }
-              inputProps={{ "aria-label": "controlled" }}
-            />
-          }
-          label="Autorizar"
-        />
-      }else{
+      if(project.status === "Activo"){
         return<>
-        <AdminProyectosPopup isOpen={isOpenModal} close={close} project={project} />
+        <EditProyectosPopup isOpen={isOpenModal} close={()=>closeModal()} project={project} />
         <Button size="small" variant="text" onClick={() =>openModal()} >Ver detalles</Button>
         </>
       }
     }
-
-    const autorizeProject = (checked,project) =>{ 
-      if(checked){
-        setAutProjects([...autProjects,project._id])
-        console.log([...autProjects,project._id])
-      }else{
-        setAutProjects(autProjects.filter(pr=>{
-          return pr._id == project._id
-        }))
-        console.log(autProjects.filter(pr=>{
-          return pr._id == project._id
-        }))
-      }
-    }
-
-    const saveChanges= ()=>{
-      autProjects.forEach(id=>{
-        updateProject(id,"Activo")
-      })
-    }
-
-    const close= (_id,status,phase)=>{
-      if(status && phase){
-        updateProject(_id,status,phase)
-      }
-
-      closeModal()
-    }
   
     const [projects, setProjects] = useState([])
-    const [autProjects, setAutProjects] = useState([])
+    const [genObj, setGenObj] = useState({})
+    const [specObj, setSpecObj] = useState({})
     const [isOpenModal, openModal, closeModal] = usePopUp();
 
     
@@ -163,20 +158,13 @@ function AdminProyectos() {
               <div className="vistaPrevia-prj">
                 <h4>{project.projectName}</h4>
                 <p>{"budget: " + project.budget}</p>
-                <p>{"Fecha de inicio: " + project.startDate}</p>
-                <p>{"Fecha de fin: " + project.endDate}</p>
               </div>
               <div className="Lista-opciones">{printOptions(project)}</div>
             </Paper>
           ))}
         </div>
-        <div className="gestusu-button">
-          <ColorButton variant="contained" onClick={() => saveChanges()}>
-            Guardar Cambios
-          </ColorButton>
-        </div>
       </div>
     );
 }
 
-export default AdminProyectos
+export default EditarProyectos

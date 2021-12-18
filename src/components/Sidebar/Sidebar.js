@@ -4,7 +4,7 @@ import avatar from "../../img/avatar.PNG";
 import { SidebarItems } from "./SidebarItems";
 import "./Sidebar.css";
 function Sidebar() {
-  let rol = "Estudiante";
+  let rol = "Lider";
 
   return (
     <div className="sidebar">

@@ -1,0 +1,129 @@
+.pop-update-box {
+    display: flex;
+    border: 1px solid #000;
+    flex-direction: column;
+  }
+  
+  .pop-update-label {
+    background-color: var(--second-color);
+    padding: 10px;
+  }
+  
+  .pop-title {
+    border-bottom: 1px solid #000;
+  }
+  
+  .pop-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #c3cfc9;
+  }
+  
+  .pop-projectdata {
+    border: solid 1px #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .pop-label-title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pop-p-update {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .pop-update-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .pop-select {
+    display: inline-block;
+    padding: 7px;
+    border: 2px solid var(--fourth-color);
+    border-radius: 10%;
+    transition: all 0.35s ease;
+  }
+  
+  .pop-btn {
+    display: flex;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.35s ease;
+    background-color: var(--fourth-color);
+    margin: auto;
+  }
+  
+  .pop-btn:hover {
+    background-color: #ecc939;
+  }
+  
+  .pop-btn:focus {
+    background-color: #fff;
+    border: #ceb035 solid 5px;
+  }
+  
+  .pop-btn-update {
+    padding: 10px;
+    margin: 10px auto;
+  }
+  
+  .pop-modal-back {
+    background-color: rgba(0, 0, 0, 0.304);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: 0; */
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pop-modal__dialog {
+    height: auto;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pop-modal-open {
+    display: grid;
+  }
+  .pop-modal-title {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  
+  .pop-titleCloseBtn {
+    float: right;
+  }
+  
+  .pop-titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .pop-titleCloseBtn button:hover {
+    background-color: none;
+  }
+  
+  .pop-projectbutton{
+      margin-left: auto;
+      padding:10px;
+  }
+  

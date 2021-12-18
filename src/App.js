@@ -13,8 +13,9 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import ListaInscritos from "./components/Liderproyectos/ListaInscritos";
-import ListarAvance from "./components/EstdProyectos/ListarAvance";
 import ProyectosStudent from "./components/EstdProyectos/ProyectosStudent";
+import EditarProyectos from "./components/EditProyectos/EditProyectos";
+import ProyectosLiderados from "./Pages/ProyectosLiderados";
 
 
 
@@ -34,10 +35,12 @@ function App() {
           <Route path="/ActualizarPerfil" element={<><Header /><div className="body-container"> <Sidebar /> <ActualizarPerfil /></div><Footer /></>}></Route>
           <Route path="/Proyectos" element={<><Header /><div className="body-container"><Sidebar /><Proyectos /></div><Footer /></>}></Route>
           <Route path="/MisProyectos" element={<><Header /><div className="body-container"><Sidebar /><ProyectosStudent /> </div><Footer /> </>}></Route>
-          <Route path="/CrearProyecto" element={<><Header /><div className="body-container"><Sidebar /> <GestionUsuarios /></div><Footer /></>}></Route>
+          <Route path="/CrearProyecto" element={<><Header /><div className="body-container"><Sidebar /> <CrearProyecto /></div><Footer /></>}></Route>
           <Route path="/GestionUsuarios" element={<><Header /><div className="body-container"><Sidebar/><GestionUsuarios /></div><Footer /></>}></Route>
           <Route path="/AdminProyectos" element={<><Header /> <div className="body-container"><Sidebar/><AdminProyectos /></div><Footer /></>}></Route>
           <Route path="/ListaInscritos" element={<><Header /> <div className="body-container"><Sidebar/><ListaInscritos /></div><Footer /></>}></Route>
+          <Route path="/EditarProyectos" element={<><Header /> <div className="body-container"><Sidebar/><EditarProyectos /></div><Footer /></>}></Route>
+          <Route path="/proyectosliderados" element={<><Header /> <div className="body-container"><Sidebar /> <ProyectosLiderados /> </div><Footer /></>}></Route>
         </Routes>
       </Router>  
     </div>
