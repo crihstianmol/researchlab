@@ -1,21 +1,65 @@
 .contenedor-proyecto {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  padding: 40px;
+  width: 100%;
 }
 
-.header-proyecto-detalles label {
-  margin: 10px;
-  padding: 20px;
+.detalles-proyecto{
+  position: absolute;
+  left: 25%;
+  top:20%;
 }
-
-.summary-proyecto h2 {
+.contenedor-proyecto h1 {
+  margin: 0;
+  padding: 0;
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 15px;
+  font-size: 32px;
+  font-weight: bold;
 }
-.detalles-proyecto {
-  width: 900px;
-  height: 300px;
+.Info-project {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 30rem));
+  gap: 10px;
+  align-content: center;
+}
+.detalles-button {
+  margin-top: 15px;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.dtl-button {
+  text-transform: initial;
+  left: 75%;
+}
+.display-proyecto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: 10%;
+}
+.close-window {
+  position: relative;
+  top:20px;
+  left:90%;
+}
+.info-proyecto {
+  position:absolute;
+  top:20%;
+  left:25%;
+  display: flex;
+  flex-direction: column;
+}
+.info-proyecto h2{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+ margin-bottom: 20PX;
+
+}
+.project-form {
+  place-self: center center; 
 }

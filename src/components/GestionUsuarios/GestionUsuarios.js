@@ -13,6 +13,10 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import "./GestionUsuarios.css"
 
+// H4 & h5 Gestion Usuarios
+// H10 Listar estudiantes registrados
+// H11 Cambiar estado de estudiante
+
 const ColorButton = styled(Button)({
   backgroundColor: "#0f084b",
 });
