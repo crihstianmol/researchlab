@@ -77,7 +77,7 @@ const projectResolvers = {
       let inscriptions = await ProjectModel.findOneAndUpdate(
         {
           _id: args._idProject,
-          "inscriptions.id": args._idInscription
+          "inscriptions._id": args._idInscription
         },
         {
           $set: inscriptionReg
