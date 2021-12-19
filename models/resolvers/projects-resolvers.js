@@ -96,7 +96,6 @@ const projectResolvers = {
           $addToSet: {
             progress: {
               $each: [{
-                id: ObjectId(),
                 date: progress.date,
                 description: progress.description,
                 createdBy: progress.createdBy
@@ -156,7 +155,6 @@ const projectResolvers = {
           $addToSet: {
             generalObj: {
               $each: [{
-                id: ObjectId(),
                 user: genObjective.user,
                 objective: genObjective.objective
               }]
@@ -203,7 +201,6 @@ const projectResolvers = {
           $addToSet: {
             specificObj: {
               $each: [{
-                id: ObjectId(),
                 user: specObjective.user,
                 objective: specObjective.objective
               }]
