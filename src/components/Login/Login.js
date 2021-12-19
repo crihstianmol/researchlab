@@ -25,10 +25,13 @@ function Login() {
   });
 
   const loginApp = (event) => {
+    console.log("Entrando")
     logUser(values.email, values.password).then(log => {
       if (log.response === "Ok") {
+        console.log("Ok:", log.response)
         changeLogin(true)
       } else {
+        console.log("Error:", log.response)
         //CODIGO DE MODAL QUE MUESTRE MENSAJE AL USUARIO
       }
     })
@@ -50,21 +53,7 @@ function Login() {
     event.preventDefault();
   };
   if (userLogin) {
-    let role = localStorage.getItem('role')
-    switch (role) {
-      case "Estudiante":
-        return <Navigate to="/MisProyectos" />
-        break;
-      case "Lider":
-        return <Navigate to="/MisProyectos" />
-        break;
-      case "Admin":
-        return <Navigate to="/MisProyectos" />
-        break;
-      default:
-        return <Navigate to="/" />
-        break;
-    }
+    return <Navigate to="/MisProyectos" />
   } else {
     return (
       <>

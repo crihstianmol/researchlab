@@ -3,6 +3,8 @@ import React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Footer from "../../Pages/Footer";
 import "./Registro.css";
+import { regUser } from "../../modules/Users";
+import { Navigate } from "react-router-dom";
 
 // H1 Registro
 
@@ -34,35 +36,13 @@ function Registro() {
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
-  const regUser = () => {
-    fetch('http://localhost:4000/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-        mutation CreateUser($email: String!, $dni: String!, $name: String!, $lastName: String!, $password: String!, $role: Enum_userRol!) {
-          createUser(email: $email, DNI: $dni, name: $name, lastName: $lastName, password: $password, role: $role) {
-            _id
-          }
-        }
-      `,
-        variables: {
-          email: values.email,
-          dni: values.DNI,
-          name: values.name,
-          lastName: values.lastName,
-          password: values.password,
-          role: values.role
-        },
-      }),
-    }).then(res => res.json())
-    .catch((error) => {
-      console.error("There is an error:", error)
-    })
-    .then((response) => {
-      console.info("Success:", response)
+  const registrarUser = () => {
+    regUser(values.email,values.DNI,values.name,values.lastName,values.password,values.role).then((user)=>{
+      if(user.error){
+
+      }else{
+        
+      }
     })
   }
   return (
@@ -134,7 +114,7 @@ function Registro() {
         </div>
 
         <div className="btn-registrarse">
-          <button onClick={regUser}>Registrarse</button>
+          <button onClick={registrarUser}>Registrarse</button>
         </div>
       </Paper>
       <div>

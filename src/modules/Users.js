@@ -89,8 +89,7 @@ const regUser = async (email, DNI, name, lastName, password, role) => {
         console.error(jsonobjetc.errors[0].message)
         user.error = jsonobjetc.errors[0].message
     } else {
-        user = jsonobjetc.data.createUser
-        user.status = user.status.replace("_", " ")
+        user.message = "Usuario Creado correctamente"
     }
     return user
 };
@@ -123,12 +122,12 @@ const logUser = async (email, password) => {
     } else {
         logData = jsonobjetc.data.loginUser
         if (logData.response === "Ok") {
-            logData.userInfo = jwt.decode(logData.jwt, process.env.JWTSECRET)
+            logData.userInfo = jwt.decode(logData.jwt, "px8r5$3^tsMr#Ck2q%KG")
             if (logData.userInfo.role) {
                 localStorage.setItem('role', logData.userInfo.role)
                 localStorage.setItem('id', logData.userInfo.id)
                 localStorage.setItem('exp', logData.userInfo.exp)
-                setTimeout(() => {
+                window.logTimeout = setTimeout(() => {
                     localStorage.removeItem('id')
                     localStorage.removeItem('role')
                     localStorage.removeItem('exp')
