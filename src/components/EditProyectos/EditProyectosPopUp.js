@@ -44,7 +44,7 @@ const EditProyectosPopup = ({ isOpen, close, project}) => {
                   <button onClick={() => close()}>X</button>
                 </div>
                 <div className="pop-label-title">
-                  <label>{"Id del Proyecto: " + project._id+"   "+project.times}</label>
+                  <label>{"Id del Proyecto: " + project._id}</label>
                 </div>
               </div>
               <div className="pop-update-label pop-body-edit">
