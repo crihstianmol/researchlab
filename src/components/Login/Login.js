@@ -26,9 +26,9 @@ function Login() {
 
   const loginApp = (event) => {
     logUser(values.email, values.password).then(log => {
-      if(log.response === "Ok"){
+      if (log.response === "Ok") {
         changeLogin(true)
-      }else{
+      } else {
         //CODIGO DE MODAL QUE MUESTRE MENSAJE AL USUARIO
       }
     })
@@ -50,7 +50,21 @@ function Login() {
     event.preventDefault();
   };
   if (userLogin) {
-    return <Navigate to="/MisProyectos" />
+    let role = localStorage.getItem('role')
+    switch (role) {
+      case "Estudiante":
+        return <Navigate to="/MisProyectos" />
+        break;
+      case "Lider":
+        return <Navigate to="/MisProyectos" />
+        break;
+      case "Admin":
+        return <Navigate to="/MisProyectos" />
+        break;
+      default:
+        return <Navigate to="/" />
+        break;
+    }
   } else {
     return (
       <>
