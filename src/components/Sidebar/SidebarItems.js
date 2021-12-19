@@ -36,11 +36,6 @@ export const SidebarItems = [
         // icon: <TiDocumentText />,
         link: "/proyectosLiderados",
       },
-      {
-        title: "Administar Proyectos",
-        // icon: <TiDocumentText />,
-        link: "/AdminProyectos",
-      },
     ],
     Estudiante: [
       {

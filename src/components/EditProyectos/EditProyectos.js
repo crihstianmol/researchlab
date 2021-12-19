@@ -1,15 +1,10 @@
 import { Button, Paper } from "@mui/material";
 import React, {useState, useEffect } from 'react'
-import { styled } from "@mui/material/styles";
 import usePopUp from "../../hooks/usePopUp";
 import EditProyectosPopup from "./EditProyectosPopUp"
 import EditObjectives from "./EditObjectives"
 import AddObjective from "./AddObjective"
 import "./EditProyectos.css"
-
-const ColorButton = styled(Button)({
-  backgroundColor: "#0f084b",
-});
 
 let leaderId = "1006108674"
 
@@ -174,7 +169,7 @@ function EditarProyectos() {
             getProjects(leaderId);
           });
       }else{
-        fetch("http://localhost:4000/graphql", {
+        fetch("https://researchlab-app.herokuapp.com/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -194,6 +189,80 @@ function EditarProyectos() {
             variables: {
               _idProject: projectId,
               _idSpecificObjective: objId,
+              objective: {
+                user: leaderId,
+                objective: obText,
+              },
+            },
+          }),
+        })
+          .then((res) => res.json())
+          .catch((error) => {
+            console.error("There is an error:", error);
+          })
+          .then((response) => {
+            console.info("Success update:", response);
+            getProjects(leaderId);
+          });
+      }
+    }
+
+    const createObjective = (projectId,obText,type) => {
+      if (type === "general") {
+        fetch("https://researchlab-app.herokuapp.com/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `
+          mutation createGeneralObjective($_idProject: ID!,$objective: objectiveInput) {
+            createGeneralObjective(_idProject: $_idProject,objective:$objective) {
+              generalObj{
+                id,
+                user,
+                objective,
+              }
+            }
+          }
+        `,
+            variables: {
+              _idProject: projectId,
+              objective: {
+                user: leaderId,
+                objective: obText,
+              },
+            },
+          }),
+        })
+          .then((res) => res.json())
+          .catch((error) => {
+            console.error("There is an error:", error);
+          })
+          .then((response) => {
+            console.info("Success update:", response);
+            getProjects(leaderId);
+          });
+      }else{
+        fetch("https://researchlab-app.herokuapp.com/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `
+          mutation createSpecificObjective($_idProject: ID!,$objective: objectiveInput) {
+            createSpecificObjective(_idProject: $_idProject,objective:$objective) {
+              specificObj{
+                id,
+                user,
+                objective,
+              }
+            }
+          }
+        `,
+            variables: {
+              _idProject: projectId,
               objective: {
                 user: leaderId,
                 objective: obText,
@@ -261,6 +330,9 @@ function EditarProyectos() {
         if(idOb){
           console.log(project,idOb,textOb,type)
           updateObjective(project._id,idOb,textOb,type)
+        }else{
+          console.log(project,textOb,type)
+          createObjective(project._id,textOb,type)
         }
       }
     }

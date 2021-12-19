@@ -20,13 +20,10 @@ const EditProyectosPopup = ({ isOpen, close, project}) => {
         budget:project.budget
       }
       setValues(vals)
-      console.log(project.times)
-      console.log(values)
       }, [isOpen]);
     
     const handleChange = (event) => {
       setValues({...values,[event.target.name]:event.target.value});
-      console.log({...values,[event.target.name]:event.target.value})
     };
       
     const [values, setValues] = useState({})
