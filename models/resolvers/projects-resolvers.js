@@ -182,7 +182,7 @@ const projectResolvers = {
       let generalObj = await ProjectModel.findOneAndUpdate(
         {
           _id: args._idProject,
-          "generalObj.id": args._idGeneralObjective
+          "generalObj._id": args._idGeneralObjective
         },
         {
           $set: genObjReg
@@ -228,7 +228,7 @@ const projectResolvers = {
       let specificObj = await ProjectModel.findOneAndUpdate(
         {
           _id: args._idProject,
-          "specificObj.id": args._idSpecificObjective
+          "specificObj._id": args._idSpecificObjective
         },
         {
           $set: specObjReg
