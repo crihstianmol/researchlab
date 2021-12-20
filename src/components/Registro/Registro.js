@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Footer from "../../Pages/Footer";
 import "./Registro.css";
 import { regUser } from "../../modules/Users";
-import { Navigate } from "react-router-dom";
+
 
 // H1 Registro
 

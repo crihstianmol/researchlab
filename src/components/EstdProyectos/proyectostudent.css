@@ -4,11 +4,6 @@
   width: 100%;
 }
 
-.detalles-proyecto{
-  position: absolute;
-  left: 25%;
-  top:20%;
-}
 .contenedor-proyecto h1 {
   margin: 0;
   padding: 0;
@@ -60,6 +55,16 @@
  margin-bottom: 20PX;
 
 }
+.project-form {
+  place-self: center center; 
+}
+
+.detalles-proyecto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .project-form {
   place-self: center center; 
 }
