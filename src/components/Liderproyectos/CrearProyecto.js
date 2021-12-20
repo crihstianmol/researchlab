@@ -1,33 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Paper, TextField } from "@mui/material";
-import CurrencyTextField from "@unicef/material-ui-currency-textfield";
-import MenuItem from "@mui/material/MenuItem";
+import {listUsers} from "../../modules/Users"
+import { styled } from "@mui/material/styles";
+import {regProject} from "../../modules/Projects"
 import "./CrearProyecto.css";
 
 // Creacion de proyecto HU_012
+const ColorButton = styled(Button)({
+  backgroundColor: "#0f084b",
+});
 
-function CrearProyecto(addProyecto) {
+
+function CrearProyecto() {
+
+  useEffect(() => {
+    listUsers({_id:localStorage.getItem('id') !== undefined && localStorage.getItem('id') !== null ? localStorage.getItem('id') : ''})
+    .then((res) => {
+      setLeaderName(res[0].name)
+    })
+  }, []);
+
   const [proyecto, setProyecto] = useState({
     nombreProyecto: "",
-    objGenerales: "",
-    objEspecificos: "",
     presupuesto: "",
     fchInicio: "",
     fchFinal: "",
-    nombreLider: "",
-    idLider: "",
   });
   function clickHandler() {
-    addProyecto(proyecto);
+    regProject(proyecto.nombreProyecto,parseFloat(proyecto.presupuesto),proyecto.fchInicio,proyecto.fchFinal,leaderId,leaderName)
+    .then(res => console.log(res))
     setProyecto({
       nombreProyecto: "",
-      objGenerales: "",
-      objEspecificos: "",
       presupuesto: "",
       fchInicio: "",
       fchFinal: "",
-      nombreLider: "",
-      idLider: "",
     });
   }
   function changeHandler(event) {
@@ -41,36 +47,17 @@ function CrearProyecto(addProyecto) {
   }
 
   // estas const definen las opciones de los combo box de fase y estado
+  const [leaderId, setLeaderId] = useState(localStorage.getItem('id') !== undefined && localStorage.getItem('id') !== null ? localStorage.getItem('id') : '')
+  const [leaderName, setLeaderName] = useState("")
 
-  const projectStatus = [
-    {
-      value: "Activo",
-      label: "Activo",
-    },
-    {
-      value: "inactivo",
-      label: "Inactivo",
-    },
-  ];
 
-  const projectStage = [
-    {
-      value: "Iniciado",
-      label: "Inciado",
-    },
-    {
-      value: "En desarrollo",
-      label: "En desarrollo",
-    },
-    {
-      value: "Terminado",
-      label: "Terminado",
-    },
-  ];
 
   return (
     <div className="form-container">
-      <Paper className='prj-container'style={{ margin: "10px 10%", padding: "25px 50px" }}>
+      <Paper
+        className="prj-container"
+        style={{ margin: "10px 10%", padding: "25px 50px" }}
+      >
         <div className="container-title">
           <h1>Registrar nuevo proyecto : </h1>
           <br />
@@ -87,39 +74,15 @@ function CrearProyecto(addProyecto) {
               onChange={changeHandler}
             />
             <TextField
-              label="Objetivos Generales"
-              name="objGenerales"
-              value={proyecto.objGenerales}
-              onChange={changeHandler}
-              multiline
-              maxRows={4}
-              fullWidth
-              autoComplete="off"
-              margin="normal"
-            />
-            <TextField
-              label="Objetivos Especificos"
-              name="objEspecificos"
-              value={proyecto.objEspecificos}
-              onChange={changeHandler}
-              multiline
-              maxRows={4}
-              fullWidth
-              autoComplete="off"
-              margin="normal"
-            />
-            <CurrencyTextField
               label="Presupuesto"
               fullWidth
               name="presupuesto"
+              autoComplete="off"
+              variant="outlined"
+              margin="normal"
               value={proyecto.presupuesto}
               onChange={changeHandler}
-              currencySymbol="$"
-              variant="outlined"
-              outputFormat="string"
-              decimalCharacter="."
-              digitGroupSeparator=","
-              margin="normal"
+              type="number"
             />
             <div className="Fch-inicio">
               <TextField
@@ -128,7 +91,6 @@ function CrearProyecto(addProyecto) {
                 onChange={changeHandler}
                 label="Fecha de Inicio"
                 type="date"
-                defaultValue="2017-05-24"
                 sx={{ width: 220 }}
                 InputLabelProps={{
                   shrink: true,
@@ -143,7 +105,6 @@ function CrearProyecto(addProyecto) {
                 onChange={changeHandler}
                 label="Fecha de terminacion"
                 type="date"
-                defaultValue="2017-05-24"
                 sx={{ width: 220 }}
                 InputLabelProps={{
                   shrink: true,
@@ -151,61 +112,11 @@ function CrearProyecto(addProyecto) {
                 margin="normal"
               />
             </div>
-            <TextField
-              label="Nombre del Lider"
-              name="nombreLider"
-              value={proyecto.nombreLider}
-              onChange={changeHandler}
-              fullWidth
-              autoComplete="off"
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="ID del Lider"
-              name="idLider"
-              value={proyecto.idLider}
-              onChange={changeHandler}
-              autoComplete="off"
-              margin="normal"
-            />
-            <div className="cmb-box-est-prj">
-              <TextField
-                margin="normal"
-                id="estado-proyecto"
-                select
-                label="Estado del Proyecto"
-                value={projectStatus}
-                helperText="Seleccione el estado del Proyecto"
-              >
-                {projectStatus.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div className="cmb-box-fase-prj">
-              <TextField
-                margin="normal"
-                id="fase-proyecto"
-                select
-                label="Fase del Proyecto"
-                value={projectStage}
-                helperText="Seleccione la fase del proyecto"
-              >
-                {projectStage.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
 
             <div className="btn-crear-proyecto">
-              <button onClick={clickHandler} variant="contained">
-                Crear Proyecto
-              </button>
+              <ColorButton variant="contained" onClick={() => clickHandler()}>
+                Crear
+              </ColorButton>
             </div>
           </form>
         </div>

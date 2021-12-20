@@ -6,7 +6,6 @@ import EditObjectives from "./EditObjectives"
 import AddObjective from "./AddObjective"
 import "./EditProyectos.css"
 
-let leaderId = "1006108674"
 
 function EditarProyectos() {
 
@@ -346,6 +345,7 @@ function EditarProyectos() {
     const [isOpenModalAdd, openModalAdd, closeModalAdd] = usePopUp();
     const [actualProject, setActualProject] = useState({})
     const [addObValues, setAddObValues] = useState({})
+    const [leaderId, setLeaderId] = React.useState(localStorage.getItem('id') !== undefined && localStorage.getItem('id') !== null ? localStorage.getItem('id') : '')
 
     
     return (

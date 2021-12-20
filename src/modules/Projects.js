@@ -67,7 +67,15 @@ const regProject = async (projectName, budget, startDate, endDate, leaderId, lea
             query: `
             mutation CreateProject($projectName: String!, $budget: Float!, $startDate: String!, $endDate: String!, $leaderId: String!, $leaderName: String!) {
                 createProject(projectName: $projectName, budget: $budget, startDate: $startDate, endDate: $endDate, leaderId: $leaderId, leaderName: $leaderName) {
-                  
+                    _id
+                    projectName
+                    budget
+                    startDate
+                    endDate
+                    leaderId
+                    leaderName
+                    status
+                    phase
                 }
               }
             `,
