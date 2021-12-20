@@ -29,7 +29,7 @@ const listProjects = async (filter) => {
         console.error(jsonobjetc.errors[0].message)
         projectList.error = jsonobjetc.errors[0].message
     } else {
-        projectList = jsonobjetc.data.Users
+        projectList = jsonobjetc.data.Projects
         if (filter.projectName) {
             projectList = projectList.filter(project => project.projectName.includes(filter.projectName))
         }
