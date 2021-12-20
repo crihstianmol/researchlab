@@ -43,6 +43,7 @@ function Registro() {
       }else{
         
       }
+      window.location.replace('/')
     })
   }
   return (

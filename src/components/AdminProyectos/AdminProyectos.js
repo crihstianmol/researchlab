@@ -97,6 +97,10 @@ function AdminProyectos() {
     }
 
     const printOptions = (project) =>{
+      const openProject=()=>{
+        setActualProject(project)
+        openModal()
+      }
       if(project.status === "Inactivo"){
         return<FormControlLabel
           control={
@@ -111,8 +115,8 @@ function AdminProyectos() {
         />
       }else{
         return<>
-        <AdminProyectosPopup isOpen={isOpenModal} close={close} project={project} />
-        <Button size="small" variant="text" onClick={() =>openModal()} >Ver detalles</Button>
+        <AdminProyectosPopup isOpen={isOpenModal} close={close} project={actualProject} />
+        <Button size="small" variant="text" onClick={() =>openProject()} >Ver detalles</Button>
         </>
       }
     }
@@ -123,10 +127,10 @@ function AdminProyectos() {
         console.log([...autProjects,project._id])
       }else{
         setAutProjects(autProjects.filter(pr=>{
-          return pr._id == project._id
+          return pr !== project._id
         }))
         console.log(autProjects.filter(pr=>{
-          return pr._id == project._id
+          return pr !== project._id
         }))
       }
     }
@@ -135,18 +139,19 @@ function AdminProyectos() {
       autProjects.forEach(id=>{
         updateProject(id,"Activo")
       })
+      setAutProjects([])
     }
 
     const close= (_id,status,phase)=>{
       if(status && phase){
         updateProject(_id,status,phase)
       }
-
       closeModal()
     }
   
     const [projects, setProjects] = useState([])
     const [autProjects, setAutProjects] = useState([])
+    const [actualProject, setActualProject] = useState({})
     const [isOpenModal, openModal, closeModal] = usePopUp();
 
     

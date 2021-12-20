@@ -30,9 +30,10 @@ const AdminProyectosPopup = ({ isOpen, close, project}) => {
     ]
 
     useEffect(() => {
+        console.log(project.status)
         setState(project.status);
         setPhase(project.phase);
-      }, []);
+      }, [isOpen]);
 
     const [state, setState] = useState("")
     const [phase, setPhase] = useState("")
@@ -65,11 +66,11 @@ const AdminProyectosPopup = ({ isOpen, close, project}) => {
                   <label>Actualizar Estado:</label>
                   <div className="pop-select">
                     <select onChange={(e)=>{setState(e.target.value)}}>
-                      {states.map(state =>{
-                          if(state === project.status){
-                              return <option key={state} defaultValue value={state}>{state}</option>
+                      {states.map(status =>{
+                          if(status == state){
+                              return <option key={status} defaultValue value={status}>{status}</option>
                           }
-                          return <option key={state} value={state}>{state}</option>
+                          return <option key={status} value={status}>{status}</option>
                       })}
                     </select>
                   </div>
@@ -77,11 +78,11 @@ const AdminProyectosPopup = ({ isOpen, close, project}) => {
                   <label>Actualizar Fase:</label>
                   <div className="pop-select">
                   <select onChange={(e)=>{setPhase(e.target.value)}}>
-                      {phases.map(phase =>{
-                          if(phase === project.phase){
-                              return <option key={phase} defaultValue value={phase}>{phase}</option>
+                      {phases.map(phases =>{
+                          if(phases == phase){
+                              return <option key={phases} defaultValue value={phases}>{phases}</option>
                           }
-                          return <option key={phase} value={phase}>{phase}</option>
+                          return <option key={phases} value={phases}>{phases}</option>
                       })}
                     </select>
                   </div>
