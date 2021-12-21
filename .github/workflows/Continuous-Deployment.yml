@@ -29,4 +29,15 @@ jobs:
           docker_options: "--no-cache"
           process_type: web
 
+      - name: Build Frontend
+        uses: gonuit/heroku-docker-deploy@v1.3.3 
+        with:
+          email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_FRONTAPP_NAME }}
+          dockerfile_directory: ./client
+          dockerfile_name: Dockerfile
+          docker_options: "--no-cache"
+          process_type: web
+
       
