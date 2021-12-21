@@ -1,0 +1,48 @@
+/* .Contenedor-proyectos h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.Lista-opciones {
+  margin-top: 15px;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.detalles-button Button {
+  text-transform: initial;
+  margin-left: 25px;
+}
+.Info-container {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill,minmax(10rem, 30rem));
+  gap: 10px;
+  align-content: center
+} */
+
+.contenedor-proyectos-disponibles h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+.contenedor-proyectos-disponibles {
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.contenido {
+  width: 500px;
+}
+.detalles-button Button {
+  text-transform: initial;
+  margin-left: 25px;
+  position: relative;
+  left: 80%;
+}

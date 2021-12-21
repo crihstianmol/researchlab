@@ -1,0 +1,38 @@
+.Contenedor-proyectos h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.Contenedor-proyectos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Lista-opciones {
+margin-top: 15px;
+justify-content: space-evenly;
+flex-direction: row;
+}
+.Lista-opciones Button {
+text-transform: initial;
+margin-left: 25px;
+}
+
+.projects-container{
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(10rem, 30rem));
+    gap: 10px;
+    align-content: center;
+}
+
+.project-item{
+    place-self: center center; 
+}
+
+  
