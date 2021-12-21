@@ -28,11 +28,20 @@ jobs:
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
           process_type: web
-          
+
       - name: Build Frontend
-        uses: jsmrcaga/action-netlify-deploy@master
+        working-directory: ./client
+        uses: actions/setup-node@v1
         with:
+          node-version: 16.13.1
+      - run: npm install
+      - run: npm run build --if-present
+      # Deploy to Netlify using our dev secrets
+      - name: Deploy Frontend to netlify
+        uses: netlify/actions/cli@master
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
-          NETLIFY_DEPLOY_TO_PROD: true
+        with:
+          args: deploy --dir=build --prod
+          secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
