@@ -19,9 +19,7 @@ jobs:
           email: ${{ secrets.HEROKU_EMAIL }} # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
           app_name: 'researchlab-back' # you aplication name
-          dockerfile_path: './backend/Dockerfile' # set the path to the folder where the Dockerfile is located
-          options: '' # Docker Build Options
-          formation: '' # Docker Dyno Formation. By default is web
+          dockerfile_path: './backend/' # set the path to the folder where the Dockerfile is located
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -35,6 +33,4 @@ jobs:
           email: ${{ secrets.HEROKU_EMAIL }} # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
           app_name: 'researchlab-front' # you aplication name
-          dockerfile_path: './client/Dockerfile' # set the path to the folder where the Dockerfile is located
-          options: '' # Docker Build Options
-          formation: '' # Docker Dyno Formation. By default is web
+          dockerfile_path: './client/' # set the path to the folder where the Dockerfile is located
