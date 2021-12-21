@@ -26,7 +26,7 @@ function AdminProyectos() {
       }, []);
     
     const getProjects = () => {
-      fetch('https://researchlab-app.herokuapp.com/graphql', {
+      fetch('http://localhost:5000/graphql', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function AdminProyectos() {
         variables.phase=phase
       }
 
-      fetch('https://researchlab-app.herokuapp.com/graphql', {
+      fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

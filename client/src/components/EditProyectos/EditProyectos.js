@@ -14,7 +14,7 @@ function EditarProyectos() {
       }, []);
 
     const getProjects = (leaderId) => {
-      fetch("https://researchlab-app.herokuapp.com/graphql", {
+      fetch("http://localhost:5000/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function EditarProyectos() {
     };
 
     const getObjectives = (projectId) => {
-        fetch("https://researchlab-app.herokuapp.com/graphql", {
+        fetch("http://localhost:5000/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -98,7 +98,7 @@ function EditarProyectos() {
   
     const updateProject = (_id,values) => {
 
-      fetch("https://researchlab-app.herokuapp.com/graphql", {
+      fetch("http://localhost:5000/graphql", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ function EditarProyectos() {
 
     const updateObjective = (projectId,objId,obText,type) => {
       if (type === "general") {
-        fetch("https://researchlab-app.herokuapp.com/graphql", {
+        fetch("http://localhost:5000/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -168,7 +168,7 @@ function EditarProyectos() {
             getProjects(leaderId);
           });
       }else{
-        fetch("https://researchlab-app.herokuapp.com/graphql", {
+        fetch("http://localhost:5000/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ function EditarProyectos() {
 
     const createObjective = (projectId,obText,type) => {
       if (type === "general") {
-        fetch("https://researchlab-app.herokuapp.com/graphql", {
+        fetch("http://localhost:5000/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -243,7 +243,7 @@ function EditarProyectos() {
             getProjects(leaderId);
           });
       }else{
-        fetch("https://researchlab-app.herokuapp.com/graphql", {
+        fetch("http://localhost:5000/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 
 const listUsers = async (filter) => {
     let usersList = []
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const listUsers = async (filter) => {
 
 const regUser = async (email, DNI, name, lastName, password, role) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const regUser = async (email, DNI, name, lastName, password, role) => {
 
 const logUser = async (email, password) => {
     let logData = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const checkSession = () => {
 
 const updateUserName = async (id, name) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ const updateUserName = async (id, name) => {
 
 const updateUserLastName = async (id, lastname) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ const updateUserLastName = async (id, lastname) => {
 
 const updateUserEmail = async (id, email) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -252,7 +252,7 @@ const updateUserEmail = async (id, email) => {
 
 const updateUserDNI = async (id, dni) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -284,7 +284,7 @@ const updateUserDNI = async (id, dni) => {
 
 const updateUserPass = async (id, password) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -316,7 +316,7 @@ const updateUserPass = async (id, password) => {
 
 const updateUserRole = async (id, role) => {
     let user = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -349,7 +349,7 @@ const updateUserRole = async (id, role) => {
 const updateUserStatus = async (id, status) => {
     let user = {}
     status = status.replace(" ", "_")
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 const listProjects = async (filter) => {
     let projectList = []
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const listProjects = async (filter) => {
 const regProject = async (projectName, budget, startDate, endDate, leaderId, leaderName) => {
     let project = {}
     budget = Number(budget) + 0.1
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const regProject = async (projectName, budget, startDate, endDate, leaderId, lea
 const updateProjectName = async (id, projectName) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ const updateProjectName = async (id, projectName) => {
 const updateProjectBudget = async (id, budget) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ const updateProjectBudget = async (id, budget) => {
 const updateProjectStartDate = async (id, startDate) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -200,7 +200,7 @@ const updateProjectStartDate = async (id, startDate) => {
 const updateProjectEndDate = async (id, endDate) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -232,7 +232,7 @@ const updateProjectEndDate = async (id, endDate) => {
 const updateProjectLeaderId = async (id, leaderId) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -264,7 +264,7 @@ const updateProjectLeaderId = async (id, leaderId) => {
 const updateProjectLeaderName = async (id, leaderName) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -296,7 +296,7 @@ const updateProjectLeaderName = async (id, leaderName) => {
 const updateProjectPhase = async (id, phase) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -328,7 +328,7 @@ const updateProjectPhase = async (id, phase) => {
 const updateProjectStatus = async (id, status) => {
 
     let project = {}
-    let response = await fetch('https://researchlab-app.herokuapp.com/graphql', {
+    let response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
