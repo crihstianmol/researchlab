@@ -1,17 +1,18 @@
 # pull official base image
-FROM node:13.12.0-alpine AS build
+FROM node:13.12.0-alpine 
 
-# set working directory
+LABEL version="1.0"
+LABEL description="This is the base docker image for the ResearchLab React app."
+LABEL maintainer = ["crihstianmol@gmail.com"]
+
 WORKDIR /app
 
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+COPY ["package.json", "package-lock.json", "./"]
 
-FROM nginx:1.19.0-alpine AS prod-stage
-COPY --from=build /app/build /usr/share/nginx/html/
-EXPOSE 80
-CMD ["nginx", "-g","daemon off;"]
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
