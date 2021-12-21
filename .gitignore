@@ -122,7 +122,6 @@
 /backend/.node_repl_history
 /backend/*.tgz
 /backend/.yarn-integrity
-/backend/.env
 /backend/.env.test
 /backend/.env.production
 /backend/.cache
