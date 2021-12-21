@@ -32,7 +32,7 @@ export default function GestionUsuarios() {
   }, []);
 
   const getUsers = () => {
-    fetch('http://localhost:5000/graphql', {
+    fetch('https://researchlab-back.herokuapp.com/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function GestionUsuarios() {
   }
 
   const updateUser = (_id,status) => {
-    fetch('http://localhost:5000/graphql', {
+    fetch('https://researchlab-back.herokuapp.com/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

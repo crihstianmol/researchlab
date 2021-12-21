@@ -33,7 +33,7 @@ function ListaInscritos() {
       }, []);
 
     const getProjects = (leaderId) => {
-      fetch("http://localhost:5000/graphql", {
+      fetch("https://researchlab-back.herokuapp.com/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ function ListaInscritos() {
     };
     
     const getInscriptions = (projectId) => {
-      fetch("http://localhost:5000/graphql", {
+      fetch("https://researchlab-back.herokuapp.com/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function ListaInscritos() {
     };
 
     const updateInscription = (_idProject,_idInscription,inscription) => {
-        fetch("http://localhost:5000/graphql", {
+        fetch("https://researchlab-back.herokuapp.com/graphql", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
