@@ -30,10 +30,10 @@ jobs:
           process_type: web
 
       - name: Build Frontend
-        working-directory: ./client
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
+        working-directory: ./client
       - run: npm install
       - run: npm run build --if-present
       # Deploy to Netlify using our dev secrets
